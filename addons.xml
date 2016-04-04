@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="plugin.video.schismwizard" name="[COLOR orange]SchisM TV[/COLOR] [COLOR wizard] Wizard[/COLOR]" version="1.0.0" provider-name="SchisM TV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.addon.common" />
+  </requires>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="service.py" start="startup">
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[COLOR lime]SchisM TV[/COLOR] Wizard</summary>
+    <description lang="en">Credits goes to Husham and TeamExpat for part of this wizard</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.totaltv"
+	name=" [COLOR yellow]Total[/COLOR] TV"
+	version="1.1.0"
+	provider-name="SchisM">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.urlresolver" version="2.10.12" />
+    <import addon="script.module.metahandler" />
+    <import addon="script.module.axel.downloader" version="0.2.0" optional="true"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.pyxbmct" version="1.1.4" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Watch your favourite TV Shows!</summary>
+        <description>Watch your favourites TV Shows! Credits goes to natko</description>
+
+    <platform>all</platform>
+    <forum></forum>
+
+  </extension>
+</addon>
+
+<addon id="script.module.addon.common"
+	     name="Common addon methods"
+	     version="2.0.0"
+	     provider-name="Eldorado (original: t0mm0)">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">Collection of commonly used addon routines</summary>
+    <description lang="en">Collection of commonly used addon routines to simplify addon development.</description>
+    <disclaimer lang="en"></disclaimer>
+    <language></language>
+    <platform>all</platform>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum></forum>
+    <website></website>
+    <email></email>
+    <source></source>
+  </extension>
+</addon>
+</addons>
