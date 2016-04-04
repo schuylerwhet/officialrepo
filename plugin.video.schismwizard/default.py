@@ -16,7 +16,7 @@ import ntpath
 addon_id = 'plugin.video.schismwizard'
 ADDON = xbmcaddon.Addon(id=addon_id)
 AddonID='plugin.video.schismwizard'
-AddonTitle="[COLOR lime]SchisM TV[/COLOR] [COLOR white]Wizard[/COLOR]"
+AddonTitle="[COLOR orange]SchisM TV[/COLOR] [COLOR white]Wizard[/COLOR]"
 dialog       =  xbmcgui.Dialog()
 net = Net()
 HOME         =  xbmc.translatePath('special://home/')
@@ -442,161 +442,21 @@ def INDEX():
 	if not os.path.exists(backupdir):
 		os.makedirs(backupdir)
 	addDir('[COLOR red][B]FRESH START[/B][/COLOR]','url',6,ART+'freshstart.png',FANART,'')
-	addDir('[COLOR white][B]SchisM TV BUILDS[/B][/COLOR]',BASEURL,20,ART+'schismwiz.png',FANART,'')
+	addDir('[COLOR lime][B]INSTALL[/B][/COLOR]',BASEURL,20,ART+'schismwiz.png',FANART,'')
 	# addDir('[COLOR yellow][B]UPDATE[/B][/COLOR]','url',1,ART+'update.png',FANART,'')
-	addDir('[COLOR white][B]Backup Settings[/B][/COLOR]','url',3,ART+'tool.png',FANART,'')
-	addDir('[COLOR white][B]Restore Settings[/B][/COLOR]','url',4,ART+'tool.png',FANART,'')
-	
+	addDir('[COLOR orange][B]Backup Settings[/B][/COLOR]','url',3,ART+'tool.png',FANART,'')
+	addDir('[COLOR orange][B]Restore Settings[/B][/COLOR]','url',4,ART+'tool.png',FANART,'')
+	# addDir('[COLOR gold][B]Unlock Build[/B][/COLOR]','url',11,ART+'tool.png',FANART,'')
 
-def UPDATEMENU():
-    # linkupdate = OPEN_URL('https://archive.org/download/wizard_rel/update_wiz.txt').replace('\n','').replace('\r','')
-    # matchupdate = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?escription="(.+?)"').findall(linkupdate)
-    
-    # if not matchupdate:
-	# dialog = xbmcgui.Dialog()
-        # dialog.ok('[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]','NO Updates Currently Available','check back later.','')
-	# return
-    dialog = Gui("DialogTextViewer.xml", path, header=xbmc.getLocalizedString(24036), content=text)
-    dialog.doModal()	
-    addDir('[COLOR red][B]FIRST Clean Addons Here[/B][/COLOR]','url',2,ART+'update.png',FANART,'')
-    link = OPEN_URL('http://ares1.srve.io/wizard/schism/wizard_rel.txt').replace('\n','').replace('\r','')
-    match = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?ersion="(.+?)"').findall(link)
-    for name,url,iconimage,fanart,description in match:
-        addDir(name + "ver:"+description,url,90,iconimage,fanart,description)
-    setView('movies', 'MAIN')	
-	
+
 def BUILDMENU():
     
-    link = OPEN_URL('http://ares1.srve.io/wizard/schism/wizard_rel.txt').replace('\n','').replace('\r','')
+    link = OPEN_URL('https://archive.org/download/stv_v_check/wizard_rel.txt').replace('\n','').replace('\r','')
     match = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?ersion="(.+?)"').findall(link)
     for name,url,iconimage,fanart,description in match:
-        addDir(name + "ver:"+description,url,90,iconimage,fanart,description)
+        addDir(name + " ver:" + description,url,90,iconimage,fanart,description)
     setView('movies', 'MAIN')
 
-def UPDATER():
-    linkupdate = OPEN_URL('https://archive.org/download/wizard_rel/update_wiz.txt').replace('\n','').replace('\r','')
-    matchupdate = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?ersion="(.+?)"').findall(linkupdate)
-    
-    if not matchupdate:
-	dialog = xbmcgui.Dialog()
-        dialog.ok('[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]','NO Updates Currently Available','check back later.','')
-	return           
-    else:
-        choice = xbmcgui.Dialog().yesno("UPDATE FOUND", 'Do you want to update your Build?', '', 'Obsolete Addons will be removed!', yeslabel='Yes',nolabel='No')
-        if choice == 0:
-            return
-        elif choice == 1:
-            dp.create("[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]","Updating",'', 'Please Wait')
-            addonPath=xbmcaddon.Addon(id=AddonID).getAddonInfo('path'); addonPath=xbmc.translatePath(addonPath); 
-            xbmcPath=os.path.join(addonPath,"..",".."); xbmcPath=os.path.abspath(xbmcPath); failed=False  
-            try:
-                for root, dirs, files in os.walk(UPDATEPATH, topdown=True):
-                    dirs[:] = [d for d in dirs if d in UPDATELIST]
-                    for name in files:
-                        try: os.remove(os.path.join(root,name))
-                        except: pass
-                    for name in dirs:
-                        try: shutil.rmtree(os.path.join(root,name))
-                        except: pass
-            except: pass
-        REMOVE_EMPTY_FOLDERS()
-        REMOVE_EMPTY_FOLDERS()
-        REMOVE_EMPTY_FOLDERS()
-        REMOVE_EMPTY_FOLDERS()
-        REMOVE_EMPTY_FOLDERS()
-        REMOVE_EMPTY_FOLDERS()
-        REMOVE_EMPTY_FOLDERS()
-	UPDATEUSERDATA()
-	
-       
-def UPDATEUSERDATA():
-    linkupdate = OPEN_URL('https://archive.org/download/wizard_rel/update_wiz.txt').replace('\n','').replace('\r','')
-    matchupdate = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?ersion="(.+?)"').findall(linkupdate)
-    if not matchupdate:
-	dialog = xbmcgui.Dialog()
-        dialog.ok('[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]','NO Updates Currently Available','check back later.','')
-	INDEX()           
-    else:
-        choice = xbmcgui.Dialog().yesno("UPDATING USERDATA", 'Do you want to update your Addon Settings?', '', 'Obsolete Addon Settings will be removed!', yeslabel='Yes',nolabel='No')
-        if choice == 0:
-            return
-        elif choice == 1:
-            dp.create("[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]","Updating",'', 'Please Wait')
-            addonPath=xbmcaddon.Addon(id=AddonID).getAddonInfo('path'); addonPath=xbmc.translatePath(addonPath); 
-            xbmcPath=os.path.join(addonPath,"..",".."); xbmcPath=os.path.abspath(xbmcPath); failed=False  
-            try:
-                for root, dirs, files in os.walk(UPDATEADPATH, topdown=True):
-                    dirs[:] = [d for d in dirs if d in UPDATELIST]
-                    for name in files:
-                        try: os.remove(os.path.join(root,name))
-                        except: pass
-                    for name in dirs:
-                        try: shutil.rmtree(os.path.join(root,name))
-                        except: pass
-            except: pass
-        REMOVE_EMPTY_FOLDERS()
-        REMOVE_EMPTY_FOLDERS()
-        REMOVE_EMPTY_FOLDERS()
-        REMOVE_EMPTY_FOLDERS()
-        REMOVE_EMPTY_FOLDERS()
-        REMOVE_EMPTY_FOLDERS()
-        REMOVE_EMPTY_FOLDERS()
-	dialog = xbmcgui.Dialog()
-	dialog.ok('[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]','Addons Cleaned Now Install The Update from SchisM TV Builds','','')
-	UPDATEMENU()
-	
-	
-def WIZARDCHECK():
-    linkupdate = OPEN_URL('https://archive.org/download/wizard_rel/update_wiz.txt').replace('\n','').replace('\r','')
-    matchupdate = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?ersion="(.+?)"').findall(linkupdate)
-    if not matchupdate:
-		dialog = xbmcgui.Dialog()
-		dialog.ok('[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]','NO Updates Currently Available','check back later.','')
-		INDEX()
-    WIZARDUPDATE()	
-    
-	
-def WIZARDUPDATE():
-    linkupdate = OPEN_URL('http://ares1.srve.io/wizard/schism/wizard_rel.txt').replace('\n','').replace('\r','')
-    matchupdate = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?ersion="(.+?)"').findall(linkupdate)
-
-
-    if skin!= "skin.confluence":
-			dialog = xbmcgui.Dialog()
-			dialog.ok('[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white] Updater[/COLOR] ','Please switch to the default Confluence skin','before proceeding.','')
-			xbmc.executebuiltin("ActivateWindow(appearancesettings)")
-			return
-    
-    sources = []
-    sname = []
-    name = "update"
-    path = xbmc.translatePath(os.path.join('special://home/addons','packages'))
-    lib=os.path.join(path, name+'.zip')
-    dp = xbmcgui.DialogProgress()
-    dp.create("[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white] Updater[/COLOR]","Downloading Update",'', 'Please Wait')
-
-    for name,url,iconimage,fanart,version in matchupdate:
-		sources.append(url)
-		sname.append(name + " - version: " + version)
-    try:
-       os.remove(lib)
-    except:
-       pass	
-    dialog = xbmcgui.Dialog()
-    index = dialog.select('UPDATE BUILD:  ', sname)
-
-    if index>-1:
-            url=sources[index]
-            downloader.download(url, lib, dp)
-    addonfolder = xbmc.translatePath(os.path.join('special://','home'))
-    time.sleep(2)
-    print '======================================='
-    print addonfolder
-    print '======================================='
-    extract.all(lib,addonfolder,dp)
-    dialog = xbmcgui.Dialog()
-    dialog.ok("[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white] Updater[/COLOR]", "To save changes you now need to force close Kodi, DO not Forget to Clear Packages After Restart ... Press OK to force close Kodi")
-    killxbmc()
 def killxbmc():
     choice = xbmcgui.Dialog().yesno('Force Close XBMC/Kodi', 'We will now attempt to force close Kodi, this is', 'to be used if having problems with guisettings.xml', 'sticking. Would you like to continue?', nolabel='No, Cancel',yeslabel='Yes, Close')
     if choice == 0:
@@ -921,14 +781,14 @@ except:
 def WIZARD(name,url,description):
     if skin!= "skin.confluence":
 	dialog = xbmcgui.Dialog()
-        dialog.ok('[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white]  Wizard[/COLOR] ','Please switch to the default Confluence skin','before proceeding.','')
+        dialog.ok('[COLOR=orange][B]SchisM TV[/B][/COLOR][COLOR=white]  Wizard[/COLOR] ','Please switch to the default Confluence skin','before proceeding.','')
         xbmc.executebuiltin("ActivateWindow(appearancesettings)")
         return
     path = xbmc.translatePath(os.path.join('special://home/addons','packages'))
     name = "build"
     dp = xbmcgui.DialogProgress()
 
-    dp.create("[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]","Downloading ",'', 'Please Wait')
+    dp.create("[COLOR=orange][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]","Downloading ",'', 'Please Wait')
     lib=os.path.join(path, name+'.zip')
     try:
        os.remove(lib)
@@ -944,9 +804,37 @@ def WIZARD(name,url,description):
     print '======================================='
     extract.all(lib,addonfolder,dp)
     dialog = xbmcgui.Dialog()
-    dialog.ok("[COLOR=lime][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]", "To save changes you now need to force close Kodi, Press OK to force close Kodi")
+    dialog.ok("[COLOR=orange][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]", "To save changes you now need to force close Kodi, Press OK to force close Kodi")
     
     killxbmc()
+
+
+def WIZARDUNLOCK(name,url,description):
+    url = "https://archive.org/download/wizard_rel/unlockbuild.zip"
+    path = xbmc.translatePath(os.path.join('special://home/addons','packages'))
+    dp = xbmcgui.DialogProgress()
+    dp.create("[COLOR=orange][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]","Downloading ",'', 'Please Wait')
+    lib=os.path.join(path,'unlockbuild.zip')
+    try:
+       os.remove(lib)
+    except:
+       pass
+	
+    downloader.download(url, lib, dp)
+    addonfolder = xbmc.translatePath(os.path.join('special://','home'))
+    time.sleep(2)
+    dp.update(0,"", "Extracting Zip Please Wait")
+    print '======================================='
+    print addonfolder
+    print '======================================='
+    extract.all(lib,addonfolder,dp)
+    dialog = xbmcgui.Dialog()
+    dialog.ok("[COLOR=orange][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]", "To save changes you now need to force close Kodi, Press OK to force close Kodi")
+    
+    killxbmc()
+################################
+###DELETE PACKAGES##############
+####THANKS GUYS @ XUNITY########
 
 def DeletePackages(url):
     print '############################################################       DELETING PACKAGES             ###############################################################'
@@ -967,10 +855,10 @@ def DeletePackages(url):
                     for d in dirs:
                         shutil.rmtree(os.path.join(root, d))
                     dialog = xbmcgui.Dialog()
-                    dialog.ok("[COLOR lime][B]SchisM TV[/B][/COLOR][COLOR white]Wizard[/COLOR]", "Packages Successfuly Removed", "")
+                    dialog.ok("[COLOR orange][B]SchisM TV[/B][/COLOR][COLOR white]Wizard[/COLOR]", "Packages Successfuly Removed", "")
     except: 
         dialog = xbmcgui.Dialog()
-        dialog.ok("[COLOR lime][B]SchisM TV[/B][/COLOR][COLOR white]Wizard[/COLOR]", "Sorry we were not able to remove Package Files", "")
+        dialog.ok("[COLOR orange][B]SchisM TV[/B][/COLOR][COLOR white]Wizard[/COLOR]", "Sorry we were not able to remove Package Files", "")
     
 #################################
 ###DELETE CACHE##################
@@ -1278,7 +1166,7 @@ def platform():
 
 def FRESHSTART(params):
     if skin!= "skin.confluence":
-        dialog.ok('[COLOR lime][B]SchisM TV[/B][/COLOR][COLOR white]Wizard[/COLOR] ','Please switch to the default Confluence skin','before performing a wipe.','')
+        dialog.ok('[COLOR orange][B]SchisM TV[/B][/COLOR][COLOR white]Wizard[/COLOR] ','Please switch to the default Confluence skin','before performing a wipe.','')
         xbmc.executebuiltin("ActivateWindow(appearancesettings)")
         return
     else:
@@ -1286,7 +1174,7 @@ def FRESHSTART(params):
     if choice2 == 0:
         return
     elif choice2 == 1:
-        dp.create("[COLOR lime][B]SchisM TV[/B][/COLOR][COLOR white]Wizard[/COLOR]","Wiping Install",'', 'Please Wait')
+        dp.create("[COLOR orange][B]SchisM TV[/B][/COLOR][COLOR white]Wizard[/COLOR]","Wiping Install",'', 'Please Wait')
         try:
             for root, dirs, files in os.walk(HOME,topdown=True):
                 dirs[:] = [d for d in dirs if d not in EXCLUDES]
@@ -1307,7 +1195,7 @@ def FRESHSTART(params):
     REMOVE_EMPTY_FOLDERS()
     REMOVE_EMPTY_FOLDERS()
     REMOVE_EMPTY_FOLDERS()
-    dialog.ok('[COLOR lime][B]SchisM TV[/B][/COLOR][COLOR white]Wizard[/COLOR]','Wipe Successful, please restart XBMC/Kodi for changes to take effect.','','')
+    dialog.ok('[COLOR orange][B]SchisM TV[/B][/COLOR][COLOR white]Wizard[/COLOR]','Wipe Successful, please restart XBMC/Kodi for changes to take effect.','','')
     killxbmc()
 
 def REMOVE_EMPTY_FOLDERS():
@@ -1415,12 +1303,10 @@ def setView(content, viewType):
         
 if mode==None or url==None or len(url)<1:
         INDEX()
-elif mode==1:
-        WIZARDUPDATE()	
+
 elif mode==20:
         BUILDMENU()
-elif mode==2:
-        UPDATER()
+
 elif mode==4:
         RESTORE()
 		
@@ -1433,7 +1319,6 @@ elif mode==6:
 	
 elif mode==7:
        DeletePackages(url)
-
 		
 elif mode==10:
         ADDONWIZARD(name,url,description)
@@ -1453,6 +1338,4 @@ elif mode==83:
 elif mode==90:
         WIZARD(name,url,description)
 
-elif mode==11:
-        WIZARDUNLOCK(name,url,description)	
 xbmcplugin.endOfDirectory(int(sys.argv[1]))
