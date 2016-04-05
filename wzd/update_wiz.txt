@@ -1,0 +1,1 @@
+<build>Alaska</build><url>https://archive.org/download/update_wiz/alaska_update.zip</url>
