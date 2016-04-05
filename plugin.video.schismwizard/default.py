@@ -451,7 +451,7 @@ def INDEX():
 
 def BUILDMENU():
     
-    link = OPEN_URL('https://archive.org/download/stv_v_check/wizard_rel.txt').replace('\n','').replace('\r','')
+    link = OPEN_URL('https://archive.org/download/stv_wizard_rel/wizard_rel.txt').replace('\n','').replace('\r','')
     match = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?ersion="(.+?)"').findall(link)
     for name,url,iconimage,fanart,description in match:
         addDir(name + " ver:" + description,url,90,iconimage,fanart,description)
@@ -809,29 +809,7 @@ def WIZARD(name,url,description):
     killxbmc()
 
 
-def WIZARDUNLOCK(name,url,description):
-    url = "https://archive.org/download/wizard_rel/unlockbuild.zip"
-    path = xbmc.translatePath(os.path.join('special://home/addons','packages'))
-    dp = xbmcgui.DialogProgress()
-    dp.create("[COLOR=orange][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]","Downloading ",'', 'Please Wait')
-    lib=os.path.join(path,'unlockbuild.zip')
-    try:
-       os.remove(lib)
-    except:
-       pass
-	
-    downloader.download(url, lib, dp)
-    addonfolder = xbmc.translatePath(os.path.join('special://','home'))
-    time.sleep(2)
-    dp.update(0,"", "Extracting Zip Please Wait")
-    print '======================================='
-    print addonfolder
-    print '======================================='
-    extract.all(lib,addonfolder,dp)
-    dialog = xbmcgui.Dialog()
-    dialog.ok("[COLOR=orange][B]SchisM TV[/B][/COLOR][COLOR=white] Wizard[/COLOR]", "To save changes you now need to force close Kodi, Press OK to force close Kodi")
-    
-    killxbmc()
+
 ################################
 ###DELETE PACKAGES##############
 ####THANKS GUYS @ XUNITY########
