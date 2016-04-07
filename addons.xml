@@ -119,7 +119,7 @@
 
 <addon
   id="skin.hybrid"
-  version="100.1.0"
+  version="100.2.0"
   name="Hybrid Dev - SchisM Mod"
   provider-name="Mudislander-SchisM">
   <requires>
