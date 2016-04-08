@@ -147,29 +147,35 @@
 
 <addon
   id="skin.hybrid"
-  version="100.3.0"
-  name="Hybrid Dev - SchisM Mod"
-  provider-name="Mudislander-SchisM">
+  version="100.4.0"
+  name="Hybrid - SchisM Mod"
+  provider-name="Mudislander-SchisM Mod">
   <requires>
-    <import addon="xbmc.gui" version="5.10.0"/>
-	<import addon="script.favourites" version="6.0.1"/>
-	<import addon="service.library.data.provider" version="0.0.4"/>
-	<import addon="script.extendedinfo" version="2.0.7"/>
-	<import addon="script.simpleplaylists" version="1.1.1"/>
-	<import addon="script.grab.fanart" version="0.13.2"/>
-  </requires>
+		<import	addon="xbmc.gui" version="5.10.0"/>
+		<import addon="service.library.data.provider" version="0.1.5"/>
+		<import addon="script.randomandlastitems" version="2.2.2"/>
+		<import addon="service.skin.widgets" version="0.0.32"/>
+		<import addon="script.favourites" version="6.0.3"/>
+		<import addon="script.simpleplaylists" version="1.1.1"/>
+		<import addon="script.skin.helper.service" version="1.0.0"/>
+		<import addon="script.image.resource.select" version="0.1.1"/>
+	</requires>
   <extension
     point="xbmc.gui.skin"
-    defaultthemename="textures.xbt"
     debugging="false"
-    effectslowdown="0.75">
+    effectslowdown="1.0">
     <res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
   </extension>
   <extension point="xbmc.addon.metadata">
-     <summary lang="en">Hybrid Skin - Dev SchisM Mod</summary>
-    <description lang="en">Hybrid Development is the initial test release of new ideas and development for Hybrid. This version is [B]UNSTABLE[/B] and only to be used by the adventurous and is [B]NOT[/B] a skin for beginners!</description>
-     <disclaimer lang="en">Skin is under constant development - settings may get lost or changed at anytime.</disclaimer>
+    <summary lang="be">Hybrid a customizable skin</summary>
+    <description lang="be">Hybrid is a customizable skin incorporating many of the now popular tweaks, addons and scripts.</description>
+
     <platform>all</platform>
+	<license>Creative Commons Attribution-ShareAlike 3.0 license</license>
+	<forum>http://forum.kodi.tv/forumdisplay.php?fid=177</forum>
+	<website></website>
+	<email></email>
+	<source>https://github.com/Mudislander/skin.hybrid/</source>
   </extension>
 </addon>
 </addons>
