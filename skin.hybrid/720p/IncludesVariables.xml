@@ -1604,7 +1604,7 @@
 	</variable>
 	<variable name="HomeMenuItemBackground" type="text">
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),Theme)">$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + StringCompare(Container(9000).ListItem.Property(Background),Default)">$VAR[WeatherFanartPath]</value>
+        <value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + StringCompare(Container(9000).ListItem.Property(Background),Default)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),Live)">special://skin/backgrounds/media-overlay.jpg</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos) + StringCompare(Container(9000).ListItem.Property(Background),Database) + !IsEmpty(Window(Home).Property(SkinHelper.AllVideosBackground)) + Skin.HasSetting(EnableFanartScript)">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies) + StringCompare(Container(9000).ListItem.Property(Background),Database) + !IsEmpty(Window(Home).Property(SkinHelper.AllMoviesBackground)) + Skin.HasSetting(EnableFanartScript)">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
@@ -2790,16 +2790,16 @@
 		<value condition="[StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts)] + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayed)]</value>
 	</variable>
 	<variable name="InfoWidgetPanel">
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites) + IntegerGreaterThan(Container(510).numitems,12)">HomeWidgetFavourite.png</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites) | StringCompare(Container(9000).ListItem.Property(WidgetSet),NextAired) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SimilarMovies)">HomeWidgetVideo.png</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies)">HomeWidgetVideo.png</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies) | StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode) | StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList)">HomeWidgetVideo.png</value>
-		<value condition="SubString(Container(9000).ListItem.Property(WidgetSet),Episodes,Right)">HomeWidgetVideo.png</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts)">HomeWidgetVideo.png</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists)">HomeWidgetMusic.png</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicPlayList)">HomeWidgetMusic.png</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather)">HomeWidgetVideo.png</value>
-	</variable>
+        <value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites) + IntegerGreaterThan(Container(510).numitems,12)">HomeWidgetFavourite.png</value>
+        <value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites) | StringCompare(Container(9000).ListItem.Property(WidgetSet),NextAired)">HomeWidgetVideo.png</value>
+        <value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies)">HomeWidgetVideo.png</value>
+        <value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies) | StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode) | StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList)">HomeWidgetVideo.png</value>
+        <value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes)">HomeWidgetVideo.png</value>
+        <value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts)">HomeWidgetVideo.png</value>
+        <value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists)">HomeWidgetMusic.png</value>
+        <value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicPlayList)">HomeWidgetMusic.png</value>
+        <value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather)">HomeWidgetVideo.png</value>
+    </variable>
 	<variable name="InfoWidgetType">
 		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather)">$INFO[Window(Weather).Property(Location)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode)">$VAR[CustomWidgetLabel]$LOCALIZE[31250]</value>
@@ -2922,18 +2922,19 @@
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + !Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day5.FanartCode),,.jpg]</value>
 	</variable>
 	<variable name="InfoWidgetFanArt">
-		<value condition="Control.HasFocus(510) + !IsEmpty(Container(510).ListItem.Art(Fanart))">$INFO[Container(510).ListItem.Art(Fanart)]</value>
-		<value condition="Control.HasFocus(510) + !IsEmpty(Container(510).ListItem.Property(Fanart))">$INFO[Container(510).ListItem.Property(Fanart)]</value>
-		<value condition="Player.HasAudio + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044)) + IsEmpty(MusicPlayer.Property(fanart_image)) + !Control.HasFocus(510)">special://skin/backgrounds/music.jpg</value>
-		<value condition="Player.HasAudio + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044)) + !IsEmpty(MusicPlayer.Property(fanart_image)) + !Control.HasFocus(510)">$INFO[MusicPlayer.Property(fanart_image)]</value>
-		<value condition="Player.HasAudio + ![IsEmpty(Control.GetLabel(5043)) | Control.HasFocus(510)]">$INFO[Player.FolderPath,,../extrafanart/]</value>
-		<value condition="Player.HasAudio + IsEmpty(Control.GetLabel(5043)) + !Control.HasFocus(510)">$INFO[Skin.String(PhysicalMusicFolder)]$INFO[MusicPlayer.Artist,,/extrafanart/]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather)">$VAR[WeatherFanartPath]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(Container(9000).ListItem.Property(WidgetSet),Movies,Right)">$INFO[Window(home).Property(RecommendedMovie.1.Art(fanart))]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(Container(9000).ListItem.Property(WidgetSet),Episodes,Right)">$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(Container(9000).ListItem.Property(WidgetSet),Concerts,Right)">$INFO[Window(home).Property(RecommendedMusicVideo.1.Art(fanart))]</value>
-		<value>SmallFanartFallback.jpg</value>
-	</variable>
+	<value  condition="Control.HasFocus(510) + !IsEmpty(Container(510).ListItem.Art(fanart))">$INFO[Container(510).ListItem.Art(fanart)]</value>
+	<value  condition="Control.HasFocus(510) + !IsEmpty(Container(510).ListItem.Property(Fanart))">$INFO[Container(510).ListItem.Property(Fanart)]</value>
+    <value condition="Player.HasAudio + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044)) + IsEmpty(MusicPlayer.Property(fanart_image)) + !Control.HasFocus(510)">special://skin/backgrounds/music.jpg</value>
+	<value condition="Player.HasAudio + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044)) + !IsEmpty(MusicPlayer.Property(fanart_image)) + !Control.HasFocus(510)">$INFO[MusicPlayer.Property(fanart_image)]</value>
+    <value condition="Player.HasAudio + ![IsEmpty(Control.GetLabel(5043)) | Control.HasFocus(510)]">$INFO[Player.FolderPath,,../extrafanart/]</value>
+    <value condition="Player.HasAudio + IsEmpty(Control.GetLabel(5043)) + !Control.HasFocus(510)">$INFO[Skin.String(PhysicalMusicFolder)]$INFO[MusicPlayer.Artist,,/extrafanart/]</value>
+<!-- 	<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value> -->
+	<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather)">$VAR[WeatherFanartPath]</value>
+	<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(Container(9000).ListItem.Property(WidgetSet),Movies,Right)">$INFO[Window(home).Property(RecommendedMovie.1.Art(fanart))]</value>	
+	<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(Container(9000).ListItem.Property(WidgetSet),Episodes,Right)">$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</value>	
+	<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(Container(9000).ListItem.Property(WidgetSet),Concerts,Right)">$INFO[Window(home).Property(RecommendedMusicVideo.1.Art(fanart))]</value>	
+	<value>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</value>   
+    </variable>
 	<variable name="InfoWidgetPoster">
 		<value condition="Control.HasFocus(510)">$INFO[Container(510).ListItem.Icon]</value>
 		<value condition="Player.HasAudio + !Control.HasFocus(510)">$INFO[MusicPlayer.Cover]</value>
