@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<category id="general" label="Backup">
+		
+		<setting id="remote_path" type="folder" label="Zip Location" visible="True" />
+		<setting id="backup_database" type="bool" label="Backup Entire Build" default="false" />
+		<setting id="backup_addon_data" type="bool" label="Backup Addon Data and Skin Settings" default="true" visible="eq(-1,false)"/>
+	</category>
+	<category id="general" label="Restore">
+		<setting id="remote_restore_path" type="file" label="Local" visible="true" />
+	</category>
+	<category label="Wizard Creator">
+		<setting id="enable_wiz1" type="bool" label="Enable wizard" default="false"/>
+		<setting id="name1" type="text" label="Name" default="" enable="!eq(-1,false)"/>
+		<setting id="url1" type="text" label="Zip Url" default="http://" enable="!eq(-2,false)"/>
+		<setting id="img1" type="text" label="Image" default="http://" enable="!eq(-3,false)"/>
+ 
+		<setting id="enable_wiz2" type="bool" label="Enable wizard" default="false"/>
+		<setting id="name2" type="text" label="Name" default="" enable="!eq(-1,false)"/>
+		<setting id="url2" type="text" label="Zip Url" default="http://" enable="!eq(-2,false)"/>
+		<setting id="img2" type="text" label="Image" default="http://" enable="!eq(-3,false)"/>
+
+		<setting id="enable_wiz3" type="bool" label="Enable wizard" default="false"/>
+		<setting id="name3" type="text" label="Name" default="" enable="!eq(-1,false)"/>
+		<setting id="url3" type="text" label="Zip Url" default="http://" enable="!eq(-2,false)"/>
+		<setting id="img3" type="text" label="Image" default="http://" enable="!eq(-3,false)"/>
+ 
+		<setting id="enable_wiz4" type="bool" label="Enable wizard" default="false"/>
+		<setting id="name4" type="text" label="Name" default="" enable="!eq(-1,false)"/>
+		<setting id="url4" type="text" label="Zip Url" default="http://" enable="!eq(-2,false)"/>
+		<setting id="img4" type="text" label="Image" default="http://" enable="!eq(-3,false)"/>
+ 
+		<setting id="enable_wiz5" type="bool" label="Enable wizard" default="false"/>
+		<setting id="name5" type="text" label="Name" default="" enable="!eq(-1,false)"/>
+		<setting id="url5" type="text" label="Zip Url" default="http://" enable="!eq(-2,false)"/>
+		<setting id="img5" type="text" label="Image" default="http://" enable="!eq(-3,false)"/>
+    </category>     	
+  </settings>
