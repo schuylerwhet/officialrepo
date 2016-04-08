@@ -9,4 +9,5 @@
 	<color name="selected">FFEB9E17</color>
 	<color name="invalid">FFFF0000</color>
 	<color name="text">C0FFFFFF</color>
+	<color name="hidemenu">FF252525</color>
 </colors>
