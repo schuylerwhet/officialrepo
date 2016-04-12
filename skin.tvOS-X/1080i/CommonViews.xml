@@ -119,7 +119,7 @@
       <animation effect="fade" time="0">Hidden</animation>
       <control type="image" description="Thumb">
         <centerleft>500</centerleft>
-        <bottom>560</bottom>
+        <bottom>540</bottom>
         <width>756</width>
         <height>470</height>
         <include>Icon_Fade</include>
@@ -127,76 +127,25 @@
         <aspectratio aligny="bottom">keep</aspectratio>
       </control>
       <include>Unwatched</include>
-      <control type="grouplist">
-        <centerleft>500</centerleft>
-        <top>546</top>
-        <width>750</width>
-        <height>50</height>
-        <orientation>horizontal</orientation>
-        <itemgap>0</itemgap>
-        <align>center</align>
-        <control type="label">
-          <visible>!IsEmpty(ListItem.VideoResolution)</visible>
-          <height>35</height>
-          <width>auto</width>
-		  <font>Size27</font>
-		  <textcolor>textcolor3</textcolor>
-          <label>$INFO[ListItem.VideoResolution]</label>
-        </control>
-        <control type="label">
-          <visible>!IsEmpty(ListItem.AudioCodec)</visible>
-          <height>35</height>
-          <width>auto</width>
-		  <font>Size27</font>
-		  <textcolor>textcolor3</textcolor>
-          <label>$INFO[ListItem.AudioCodec, • ]</label>
-        </control>
-        <control type="label">
-          <visible>!IsEmpty(ListItem.VideoCodec)</visible>
-          <height>35</height>
-          <width>auto</width>
-          <aspectratio>keep</aspectratio>
-		  <font>Size27</font>
-		  <textcolor>textcolor3</textcolor>
-          <label>$INFO[ListItem.VideoCodec, • ]</label>
-        </control>
-        <control type="label">
-          <visible>!IsEmpty(ListItem.FileExtension)</visible>
-          <height>35</height>
-          <width>auto</width>
-          <aspectratio>keep</aspectratio>
-		  <font>Size27</font>
-		  <textcolor>textcolor3</textcolor>
-          <label>$INFO[ListItem.FileExtension, • ]</label>
-        </control>
-        <control type="label">
-          <visible>!IsEmpty(ListItem.MPAA) + !StringCompare($VAR[MPAAS],NA)</visible>
-          <height>35</height>
-          <width>auto</width>
-          <aspectratio>keep</aspectratio>
-		  <font>Size27</font>
-		  <textcolor>textcolor3</textcolor>
-          <label>$VAR[MPAAS, • ]</label>
-        </control>
-      </control>
-      <control type="image">
-        <visible>!IsEmpty(ListItem.Mpaa) + !Container.Content(Movies)</visible>
-        <animation condition="!Container.Content(Episodes)" effect="slide" end="450,320">Conditional</animation>
-        <left>60</left>
-        <top>100</top>
-        <height>120</height>
-        <width>120</width>
-        <aspectratio>keep</aspectratio>
-        <texture>$VAR[MPAAS,Mpaa/,.png]</texture>
-      </control>
+ 
       <control type="image" description="Stars">
         <visible>!IsEmpty(ListItem.Rating)</visible>
         <centerleft>500</centerleft>
-        <top>526</top>
+        <top>540</top>
         <height>24</height>
         <width>135</width>
         <aspectratio align="right">keep</aspectratio>
         <texture colordiffuse="textcolor2">$INFO[ListItem.Rating,badges/,.png]</texture>
+      </control>
+      <control type="label" description="Genre">
+        <centerleft>500</centerleft>
+        <top>565</top>
+        <height>24</height>
+        <width>650</width>
+                       <font>size26</font>
+                        <align>center</align>
+						<textcolor>50details</textcolor>
+                        <label>$INFO[ListItem.Genre]</label>
       </control>
       <!--control type="image">
         <top>570</top>
@@ -206,9 +155,9 @@
       </control-->
       <control type="textbox" description="plot">
 		<centerleft>500</centerleft>
-        <top>580</top>
+        <top>610</top>
         <width>756</width>
-        <height>350</height>
+        <height>420</height>
         <align>center</align>
 		<font>size28</font>
         <label>$INFO[ListItem.Plot]</label>
@@ -782,6 +731,14 @@
         <height>100</height>
         <width>805</width>
         <include>right_listpanel_unfocused</include>
+
+      </control>
+	  <control type="image">
+		<left>702</left>
+        <height>100</height>
+        <width>100</width>
+        <texture>$INFO[ListItem.Icon]</texture>
+		
       </control>
 	  <control type="image">
 		<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies) | Container.Content(episodes) | Control.IsVisible(13) | Control.IsVisible(10)</visible>
@@ -851,6 +808,13 @@
           <width>805</width>
           <include>right_listpanel_focused</include>
         </control>
+	  <control type="image">
+		<left>702</left>
+        <height>100</height>
+        <width>100</width>
+        <texture>$INFO[ListItem.Icon]</texture>
+		
+      </control>
 	    <control type="image">
 		  <visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies) | Container.Content(episodes) | Control.IsVisible(13) | Control.IsVisible(10)</visible>
 		  <left>4</left>

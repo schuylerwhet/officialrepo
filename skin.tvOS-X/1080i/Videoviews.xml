@@ -836,7 +836,7 @@
                 <aspectratio>scale</aspectratio>
             </control>
             <control type="fixedlist" id="500" description="fanart">
-                <visible>Container.content(movies) | container.content(seasons) | container.content(tvshows) | Container.Content(Sets) | Container.Content(Episodes)</visible>
+                <visible>Container.content(movies) |  container.content(tvshows)</visible>
                 <onup condition="!Skin.HasSetting(ViewsMenuOff)">9000</onup>
                 <onup condition="Skin.HasSetting(ViewsMenuOff)">noop</onup>
                 <ondown condition="!Skin.HasSetting(Scrollbars_Active)">60</ondown>
@@ -910,7 +910,7 @@
                             <height>200</height>
                             <width>300</width>
 							
-                            <texture background="true" fallback="DefaultVideoCover.png" condition="!Container.Content(Episodes)">$INFO[ListItem.Icon]</texture>
+                            <texture background="true" fallback="DefaultVideoCover.png" condition="!Container.Content(Episodes)">$INFO[ListItem.Property(fanart_image)]</texture>
                             <texture background="true" fallback="DefaultVideoCover.png" condition="Container.Content(Episodes)">$INFO[ListItem.Icon]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>

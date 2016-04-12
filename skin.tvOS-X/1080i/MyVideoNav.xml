@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <backgroundcolor>Background</backgroundcolor>
-    <defaultcontrol always="true">500</defaultcontrol>
+    <defaultcontrol always="true">51</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <views>500,50,51,52,53,54,55,500,501,502</views>
+    <views>51,50,52,53,54,55,500,501,502</views>
+
     <include condition="Control.IsVisible(54)">OpenClose</include>
     <controls>
         <include>Background</include>		
