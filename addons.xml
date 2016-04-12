@@ -231,4 +231,24 @@
 	<source>https://github.com/Mudislander/skin.hybrid/</source>
   </extension>
 </addon>
+
+<addon id="skin.tvOS-X" version="101.9.10" name="tvOS-X SchisM Mod" provider-name="iCanuck-SchisM">
+  <requires>
+    <import addon="xbmc.gui" version="5.10.0"/>
+    <import addon="script.favourites" version="3.2.5"/>
+    <import addon="service.library.data.provider" version="0.0.4"/>
+  </requires>
+  <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1" debugging="false">
+        <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i"/>
+    </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+
+    <summary lang="en">Modified from Fastcolors, SiO2-ATV4 - A simple and handy visually Skin based on AppleTv4</summary>
+
+    <description lang="en">Thanks to Fastcolors for SiO2.</description>
+    <description lang="it">Se ti piace la politica di Apple per le interfacce grafiche </description>
+    <disclaimer>tvOS-X</disclaimer>
+  </extension>
+</addon>
 </addons>
