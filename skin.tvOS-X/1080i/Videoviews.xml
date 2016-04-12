@@ -162,6 +162,13 @@
         </control>
         <!--BIG LIST -->
         <control type="group" description="BigList">
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <include>Fanart_Fade</include>
+                <texture background="true">$INFO[ListItem.Property(fanart_image)]</texture>
+                <colordiffuse>55AAAABB</colordiffuse>
+                <aspectratio>scale</aspectratio>
+            </control>			
             <visible>Control.IsVisible(51)</visible>
             <include>left_Panel</include>
             <control type="group">

@@ -232,7 +232,7 @@
   </extension>
 </addon>
 
-<addon id="skin.tvOS-X" version="102.9.10" name="tvOS-X SchisM Mod" provider-name="iCanuck-SchisM">
+<addon id="skin.tvOS-X" version="103.9.10" name="tvOS-X SchisM Mod" provider-name="iCanuck-SchisM">
   <requires>
     <import addon="xbmc.gui" version="5.10.0"/>
     <import addon="script.favourites" version="3.2.5"/>

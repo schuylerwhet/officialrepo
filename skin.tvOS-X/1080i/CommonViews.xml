@@ -50,16 +50,16 @@
   
 <!-- LIST PANELS -- BUTTONSELECTOR-->
   <include name="right_listpanel_texfocus">	    
-	<texturefocus border="8">images/White.png</texturefocus>
+	<texturefocus border="8">special://skin/icons/homebar.png</texturefocus>
   </include>
    <include name="right_listpanel_alttexfocus">	    
-	<alttexturefocus border="8">images/White.png</alttexturefocus> 
+	<alttexturefocus border="8">special://skin/icons/homebar.png</alttexturefocus> 
   </include> 
   <include name="right_listpanel_texnofocus">	    
-	<texturenofocus border="8" colordiffuse="77FFFFFF">images/White.png</texturenofocus> 
+	<texturenofocus border="8" colordiffuse="77FFFFFF">special://skin/icons/homebar.png</texturenofocus> 
   </include>    
   <include name="right_listpanel_unfocused">	    
-	<texture colordiffuse="77FFFFFF">images/White.png</texture>
+	<texture colordiffuse="77FFFFFF">special://skin/icons/homebar.png</texture>
   </include>
    <include name="right_listpanel_focused">	    
 	<texture>images/White.png</texture>
@@ -145,7 +145,7 @@
                        <font>size26</font>
                         <align>center</align>
 						<textcolor>50details</textcolor>
-                        <label>$INFO[ListItem.Genre]</label>
+                        <label>$INFO[ListItem.Year] - $INFO[ListItem.Genre]</label>
       </control>
       <!--control type="image">
         <top>570</top>
@@ -745,7 +745,7 @@
 		<left>4</left>
 		<height>81</height>
 		<width>30</width>
-		<texture>$VAR[WatchStatus,overlay/List/]</texture>
+		<texture colordiffuse="lime">$VAR[WatchStatus,overlay/List/]</texture>
 		<aspectratio>keep</aspectratio>
 	  </control>
       <include>HD_BadgeLW</include>
@@ -755,7 +755,7 @@
         <control type="label" description="Main Label">
           <visible>![ListItem.IsFolder | IntegerGreaterThan(ListItem.VideoResolution,700)]</visible>
           <left>45</left>
-          <width>717</width>
+          <width>630</width>
           <include>50Title</include>
           <label>$INFO[ListItem.label]</label>
         </control>
@@ -774,22 +774,22 @@
           <left>45</left>
           <include>50details</include>
 		  <!--label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[31038]]$INFO[ListItem.label2, • ]</label-->
-          <label>$INFO[ListItem.Duration]min</label>
+          <label>$INFO[ListItem.Year] • $INFO[ListItem.Duration]min</label>
         </control>	
         <control type="label" description="Label2">
-          <visible>!IsEmpty(ListItem.Artist)</visible>
+          <visible>!ListItem.IsFolder + !IsEmpty(ListItem.Artist)</visible>
           <width>630</width>
           <left>45</left>
           <include>50details</include>
 		  <!--label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[31038]]$INFO[ListItem.label2, • ]</label-->
-          <label>$INFO[ListItem.Year] • $INFO[ListItem.Duration] • $INFO[ListItem.Artist]</label>
+          <label>$INFO[ListItem.Year] • $INFO[ListItem.Duration]min • $INFO[ListItem.Artist]</label>
         </control>				
         <control type="label" description="Label2">
-          <visible>container.content(episodes)  + !ListItem.IsFolder</visible>
+          <visible>[container.content(TVShows) | container.content(seasons) | container.content(episodes)] + !IsEmpty(ListItem.Duration)</visible>
           <left>45</left>
           <align>left</align>
           <include>50details</include>
-          <label>$INFO[ListItem.Duration,, $LOCALIZE[31038]]</label>
+          <label>$INFO[ListItem.Year] • $INFO[ListItem.Duration]min</label>
         </control>
       </control>
     </itemlayout>
@@ -820,7 +820,7 @@
 		  <left>4</left>
 		  <height>81</height>
 		  <width>30</width>
-		  <texture>$VAR[WatchStatus,overlay/List/FO/]</texture>
+		  <texture colordiffuse="lime">$VAR[WatchStatus,overlay/List/FO/]</texture>
 		  <aspectratio>keep</aspectratio>
 	    </control>
         <include>HD_BadgeLW</include>
@@ -830,7 +830,7 @@
           <control type="label" description="Main Label">
             <visible>![ListItem.IsFolder | IntegerGreaterThan(ListItem.VideoResolution,700)]</visible>
             <left>45</left>
-            <width>717</width>
+            <width>630</width>
             <include>50TitleFO</include>
             <label>$INFO[ListItem.label]</label>
           </control>
@@ -849,22 +849,22 @@
 			<left>45</left>
 			<include>50detailsFO</include>
 			<!--label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[31038]]$INFO[ListItem.label2, • ]</label-->
-			<label>$INFO[ListItem.Duration]min</label>
+			<label>$INFO[ListItem.Year] • $INFO[ListItem.Duration]min</label>
 		  </control>	
 			<control type="label" description="Label2">
-			<visible>!IsEmpty(ListItem.Artist)</visible>
+			<visible>!IsEmpty(ListItem.Artist) + !Container.Content(Movies)</visible>
 			<width>630</width>
 			<left>45</left>
 			<include>50detailsFO</include>
 			<!--label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[31038]]$INFO[ListItem.label2, • ]</label-->
-			<label>$INFO[ListItem.Year] • $INFO[ListItem.Duration] • $INFO[ListItem.Artist]</label>
+			<label>$INFO[ListItem.Year] • $INFO[ListItem.Duration]min • $INFO[ListItem.Artist]</label>
 		  </control>
           <control type="label" description="Label2">
-            <visible>container.content(episodes) + !ListItem.IsFolder</visible>
+            <visible>[container.content(TVShows) | container.content(seasons) | container.content(episodes)] + !IsEmpty(ListItem.Duration)</visible>
             <left>45</left>
             <align>left</align>
             <include>50detailsFO</include>
-            <label>$INFO[ListItem.Duration,, $LOCALIZE[31038]]</label>
+            <label>$INFO[ListItem.Year] • $INFO[ListItem.Duration]min</label>
           </control>
         </control>
       </control>
