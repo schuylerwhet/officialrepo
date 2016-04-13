@@ -117,21 +117,50 @@
       <visible>!IsEmpty(ListItem.Plot)</visible>
       <animation effect="fade" time="400">Visible</animation>
       <animation effect="fade" time="0">Hidden</animation>
+	<control type="image">
+		<visible>!Container.content(episodes)</visible>
+		<centerleft>500</centerleft>
+        <top>130</top>
+        <width>650</width>
+        <height>900</height>
+		<texture colordiffuse="77FFFFFF">special://skin/icons/homebar.png</texture>
+		<aspectratio>scale</aspectratio>
+	</control>
+	<control type="image">
+		<visible>Container.content(episodes)</visible>
+		<centerleft>500</centerleft>
+        <top>130</top>
+        <width>800</width>
+        <height>450</height>
+		<texture colordiffuse="77FFFFFF">special://skin/icons/homebar.png</texture>
+		<aspectratio>scale</aspectratio>
+	</control>
       <control type="image" description="Thumb">
+		<visible>!Container.content(episodes)</visible>
         <centerleft>500</centerleft>
-        <bottom>540</bottom>
-        <width>756</width>
-        <height>470</height>
+        <top>185</top>
+        <width>800</width>
+        <height>800</height>
         <include>Icon_Fade</include>
         <texture background="true">$INFO[ListItem.Icon]</texture>
         <aspectratio aligny="bottom">keep</aspectratio>
       </control>
       <include>Unwatched</include>
- 
+      <control type="image" description="Thumb">
+		<visible>Container.content(episodes)</visible>
+        <centerleft>500</centerleft>
+        <top>585</top>
+        <width>800</width>
+        <height>425</height>
+        <include>Icon_Fade</include>
+        <texture background="true">$INFO[ListItem.Icon]</texture>
+        <aspectratio>scale</aspectratio>
+      </control>
+      <include>Unwatched</include> 
       <control type="image" description="Stars">
         <visible>!IsEmpty(ListItem.Rating)</visible>
         <centerleft>500</centerleft>
-        <top>540</top>
+        <top>130</top>
         <height>24</height>
         <width>135</width>
         <aspectratio align="right">keep</aspectratio>
@@ -139,10 +168,10 @@
       </control>
       <control type="label" description="Genre">
         <centerleft>500</centerleft>
-        <top>565</top>
+        <top>160</top>
         <height>24</height>
         <width>650</width>
-                       <font>size26</font>
+                       <font>size24</font>
                         <align>center</align>
 						<textcolor>50details</textcolor>
                         <label>$INFO[ListItem.Year] - $INFO[ListItem.Genre]</label>
@@ -154,12 +183,13 @@
         <texture>images/Line.png</texture>
       </control-->
       <control type="textbox" description="plot">
+		<visible>Container.Content(episodes)</visible>
 		<centerleft>500</centerleft>
-        <top>610</top>
-        <width>756</width>
-        <height>420</height>
+        <top>200</top>
+        <width>750</width>
+        <height>365</height>
         <align>center</align>
-		<font>size28</font>
+		<font>size30</font>
         <label>$INFO[ListItem.Plot]</label>
       </control>
       <!--control type="image">
@@ -652,15 +682,12 @@
         <width>805</width>
         <include>right_listpanel_unfocused</include>
       </control>	
-      <control type="group">
-        <control type="image">
-          <left>9</left>
-          <top>9</top>
-          <height>93</height>
-          <width>93</width>
-          <texture background="true">$INFO[ListItem.Icon]</texture>
-          <aspectratio>keep</aspectratio>
-        </control>
+	  <control type="image">
+		<left>702</left>
+        <height>100</height>
+        <width>100</width>
+        <texture>$INFO[ListItem.Icon]</texture>
+		<aspectratio>scale</aspectratio>
       </control>
       <control type="label" description="Main Label">
         <visible>IsEmpty(ListItem.Label2)</visible>
@@ -696,14 +723,13 @@
           <width>805</width>
           <include>right_listpanel_focused</include>
         </control>	  
-        <control type="image">
-          <left>9</left>
-          <top>9</top>
-          <height>93</height>
-          <width>93</width>
-          <texture background="true">$INFO[ListItem.Icon]</texture>
-          <aspectratio>keep</aspectratio>
-        </control>
+		  <control type="image">
+			<left>702</left>
+			<height>100</height>
+			<width>100</width>
+			<texture>$INFO[ListItem.Icon]</texture>
+			<aspectratio>scale</aspectratio>		
+		  </control>
       </control>
       <control type="label" description="Main Label">
         <visible>IsEmpty(ListItem.Label2)</visible>
@@ -734,11 +760,12 @@
 
       </control>
 	  <control type="image">
+		
 		<left>702</left>
         <height>100</height>
         <width>100</width>
         <texture>$INFO[ListItem.Icon]</texture>
-		
+		<aspectratio>scale</aspectratio>
       </control>
 	  <control type="image">
 		<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies) | Container.Content(episodes) | Control.IsVisible(13) | Control.IsVisible(10)</visible>
@@ -813,14 +840,14 @@
         <height>100</height>
         <width>100</width>
         <texture>$INFO[ListItem.Icon]</texture>
-		
+		<aspectratio>scale</aspectratio>		
       </control>
 	    <control type="image">
 		  <visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies) | Container.Content(episodes) | Control.IsVisible(13) | Control.IsVisible(10)</visible>
 		  <left>4</left>
 		  <height>81</height>
 		  <width>30</width>
-		  <texture colordiffuse="lime">$VAR[WatchStatus,overlay/List/FO/]</texture>
+		  <texture>$VAR[WatchStatus,overlay/List/FO/]</texture>
 		  <aspectratio>keep</aspectratio>
 	    </control>
         <include>HD_BadgeLW</include>

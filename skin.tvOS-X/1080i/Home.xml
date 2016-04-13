@@ -4,9 +4,10 @@
     <defaultcontrol always="true">9000</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <onload>RunScript(script.favourites)</onload>
-    <onload>SetProperty(SkinWidgets_RandomItems_Update,true)</onload>
+    <!-- <onload>SetProperty(SkinWidgets_RandomItems_Update,true)</onload> -->
     <include>OpenClose</include>
     <controls>
+
         <control type="group" description="Furniture">		
 		  <visible>!Player.HasVideo</visible>		  
 		  <control type="group" description="DEFAULT BG HOME">
@@ -19,18 +20,7 @@
                 <aspectratio>stretch</aspectratio>
                 <texture background="true">$VAR[HomeBG]</texture>
             </control>			
-			<control type="label" description="Clock">		
-				<visible>!Skin.HasSetting(ShowClock) + !System.Date(04-01,04-01) + Container(9000).Row(0)</visible>
-				<right>30</right>
-				<top>20</top>
-				<width>560</width>
-				<height>30</height>
-				<align>right</align>
-				<font>size30</font>
-				<shadowcolor>-</shadowcolor>
-				<textcolor>textcolor4</textcolor>
-				<label>$INFO[System.Date] • $INFO[System.Time]</label>
-			</control>						
+					
             <control type="image" description="Home ICON Banner">
 				<animation condition="!Container(9000).Row(0) | Container(9000).HasPrevious()" effect="slide" start="0,0" end="0,-590" time="220">Conditonal</animation>						
 				<visible>IsEmpty(Skin.String(CustomBgHome)) + !Skin.HasSetting(NoHomeBanner)</visible>				
@@ -70,25 +60,7 @@
 			<visible>Window.IsActive(Home.xml) + Player.HasVideo</visible>
 			<aspectratio>scale</aspectratio>
 		</control>		
-        <control type="button" id="9009">
-            <visible allowhiddenfocus="true">Control.HasFocus(9009)</visible>
-            <left>0</left>
-            <top>15</top>
-            <width>34</width>
-            <height>34</height>
-            <texturefocus aspectratio="keep">images/hometoggle.png</texturefocus>
-            <!--MOVIES-->
-            <onclick  condition="Control.IsVisible(311) + StringCompare(Skin.String(moviesshelf),)">Skin.SetString(moviesshelf,WL)</onclick>
-            <onclick  condition="Control.IsVisible(311) + StringCompare(Skin.String(moviesshelf),WL)">Skin.SetString(moviesshelf,RND)</onclick>
-            <onclick  condition="Control.IsVisible(311) + StringCompare(Skin.String(moviesshelf),RND)">Skin.SetString(moviesshelf,)</onclick>
-            <!--TVSHOWS-->
-            <onclick  condition="Control.IsVisible(312)">Skin.ToggleSetting(TVShelf_Watchlist)</onclick>
-            <onup>noop</onup>
-            <ondown condition="Control.IsVisible(311)">311</ondown>
-            <ondown condition="Control.IsVisible(312)">312</ondown>
-            <onleft>noop</onleft>
-            <onright>noop</onright>
-        </control>
+
         <control type="panel" id="9000" description="ICONE">
             <animation condition="!Container(9000).Row(0)" effect="slide" start="0,0" end="0,-720" time="220">Conditonal</animation>	
             <animation condition="[![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2)]]" effect="slide" start="0,0" end="0,-580" time="220">Conditonal</animation>	
@@ -310,39 +282,39 @@
                     <onclick>ActivateWindow(MyWeather)</onclick>
                 </item>
                 <item id="345">
-                    <visible>true</visible>
+                    <visible>!Skin.HasSetting(hideyoutube)</visible>
                     <label>Youtube</label>
                     <thumb>special://skin/icons/youtube.png</thumb>
                     <onclick>RunAddon(plugin.video.youtube)</onclick>
                 </item>
                 <item id="3000">
-                    <visible>true</visible>
+                    <visible>!Skin.HasSetting(hidevimeo)</visible>
                     <label>Vimeo</label>
                     <thumb>special://skin/icons/vimeo.png</thumb>
                     <onclick>RunAddon(plugin.video.vimeo)</onclick>
                 </item>
                 <item id="3001">
-                    <visible>true</visible>
+                    <visible>!Skin.HasSetting(hidetwitch)</visible>
                     <label>Twitch</label>
                     <thumb>special://skin/icons/twitch.png</thumb>
                     <onclick>RunAddon(plugin.video.twitch)</onclick>
                 </item>	
                 <item id="3001">
-                    <visible>true</visible>
+                    <visible>!Skin.HasSetting(hideted)</visible>
                     <label>Ted Talks</label>
                     <thumb>special://skin/icons/ted.png</thumb>
                     <onclick>RunAddon(plugin.video.ted.talks)</onclick>
                 </item>								
 					
                 <item id="355">
-					<visible>!Skin.HasSetting(livetvmenu)</visible>>
+					<visible>!Skin.HasSetting(livetvmenu)</visible>
                     <label>$LOCALIZE[31059]</label>
                     <thumb>special://skin/icons/LiveTV.png</thumb>
                     <onclick>ActivateWindow(1718)</onclick>
                     <visible>!Pvr.IsRecording + System.GetBool(pvrmanager.enabled) + !Skin.HasSetting(PVRhide)</visible>
                 </item>	
                 <item id="355">
-					<visible>Skin.HasSetting(livetvmenu)</visible>>
+					<visible>Skin.HasSetting(livetvmenu)</visible>
                     <label>$VAR[LivetvLabel]</label>
                     <thumb>$VAR[LivetvIcon]</thumb>	
 					<onclick condition="StringCompare(Skin.String(livetv),tvchannels)">ActivateWindowAndFocus(TVChannels)</onclick>
@@ -670,15 +642,15 @@
                 <visible>!Skin.HasSetting(NORSS)</visible>
                 <include>VisibleFade</include>
                 <left>0</left>
-                <top>1046</top>
+                <top>5</top>
                 <width>1920</width>
                 <height>33</height>
                 <font>size22</font>
                 <urlset>1</urlset>
                 <shadowcolor>-</shadowcolor>
-                <titlecolor>selectedcolor</titlecolor>
-                <headlinecolor>textcolor2</headlinecolor>
-                <textcolor>textcolor2</textcolor>
+                <titlecolor>grey</titlecolor>
+                <headlinecolor>grey</headlinecolor>
+                <textcolor>grey</textcolor>
             </control>
         </control>
         <control type="group" description="Player Info">
@@ -734,6 +706,100 @@
             <include>ShelfTitle</include>
             <label>$VAR[shelflabel]</label>
         </control>
-      </control>		
+		
+
+
+<!--         <control type="button" id="9009">
+            <visible>Control.HasFocus(9009) | Control.HasFocus(90000)</visible>
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+            <texturefocus aspectratio="keep">special://skin/icons/headbar.png</texturefocus>
+            <onup>noop</onup>
+            <ondown condition="Control.IsVisible(311)">311</ondown>
+            <ondown condition="Control.IsVisible(312)">312</ondown>
+            <onleft>90000</onleft>
+            <onright>noop</onright>
+        </control> -->
+	
+		
+		
+				<control id="9009" type="button">
+					<visible>Container(9000).Row(0) | Container(9000).HasPrevious()</visible>
+					
+					<top>40</top>
+					<left>550</left>
+					<width>250</width>
+					<height>45</height>
+					<font>size24</font>
+					<align>center</align>
+					<label>Search</label>
+					<textcolor>grey</textcolor>
+					
+					<focusedcolor>5dffffff</focusedcolor>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>RunAddon(plugin.program.super.favourites)</onclick>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onup>9000</onup>
+					<onleft>9009</onleft>
+					<onright>90000</onright>
+				</control>			
+				<control id="90000" type="button">
+					<visible>Container(9000).Row(0) | Container(9000).HasPrevious()</visible>
+					<top>40</top>
+					<left>750</left>
+					<width>250</width>
+					<height>45</height>
+					<font>size24</font>
+					<align>center</align>
+					<label>Apps</label>
+					<textcolor>grey</textcolor>
+					
+					<focusedcolor>5dffffff</focusedcolor>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>RunAddon(plugin.program.addoninstaller)</onclick>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>9009</onleft>
+					<onright>90001</onright>
+				</control>		
+				<control id="90001" type="button">
+					<visible>Container(9000).Row(0) | Container(9000).HasPrevious()</visible>
+					<top>40</top>
+					<left>950</left>
+					<width>250</width>
+					<height>45</height>
+					<font>size24</font>
+					<align>center</align>
+					<label>Settings</label>
+					<textcolor>grey</textcolor>
+					
+					<focusedcolor>5dffffff</focusedcolor>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ActivateWindow(Settings)</onclick>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>90000</onleft>
+					
+				</control>	
+				<control type="label" description="Clock">		
+					<visible>Container(9000).Row(0) | Container(9000).HasPrevious()</visible>
+					<top>40</top>
+					<left>1400</left>
+					<width>550</width>
+					<height>45</height>
+					<font>size24</font>
+					<align>center</align>
+					
+					
+					<label>$INFO[System.Date] • $INFO[System.Time]</label>
+				</control>									
+			
+		  </control>		
     </controls>
 </window>

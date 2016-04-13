@@ -310,7 +310,62 @@
                             <label>$LOCALIZE[1]</label>
                             <onclick>Skin.ToggleSetting(hidepic)</onclick>
                         </item>
-																	
+                        <item id="10000" description="youtube">
+                            <visible>!Skin.HasSetting(hideyoutube)</visible>
+                            <thumb>special://skin/icons/youtube.png</thumb>
+							<property name="color">images/White.png</property>
+                            <label>Youtube</label>
+                            <onclick>Skin.ToggleSetting(hideyoutube)</onclick>
+                        </item>
+                        <item id="10000" description="youtube">
+                            <visible>Skin.HasSetting(hideyoutube)</visible>
+                            <thumb>icons/off.png</thumb>
+							<property name="color">special://skin/icons/youtube.png</property>
+                            <label>Youtube</label>
+                            <onclick>Skin.ToggleSetting(hideyoutube)</onclick>
+                        </item>
+                        <item id="10001" description="vimeo">
+                            <visible>!Skin.HasSetting(hidevimeo)</visible>
+                            <thumb>special://skin/icons/vimeo.png</thumb>
+							<property name="color">images/White.png</property>
+                            <label>Youtube</label>
+                            <onclick>Skin.ToggleSetting(hidevimeo)</onclick>
+                        </item>
+                        <item id="10001" description="vimeo">
+                            <visible>Skin.HasSetting(hidevimeo)</visible>
+                            <thumb>icons/off.png</thumb>
+							<property name="color">special://skin/icons/vimeo.png</property>
+                            <label>Vimeo</label>
+                            <onclick>Skin.ToggleSetting(hidevimeo)</onclick>
+                        </item>		
+                        <item id="10002" description="twitch">
+                            <visible>!Skin.HasSetting(hidetwitch)</visible>
+                            <thumb>special://skin/icons/twitch.png</thumb>
+							<property name="color">images/White.png</property>
+                            <label>Twitch</label>
+                            <onclick>Skin.ToggleSetting(hidetwitch)</onclick>
+                        </item>
+                        <item id="10002" description="twitch">
+                            <visible>Skin.HasSetting(hidetwitch)</visible>
+                            <thumb>icons/off.png</thumb>
+							<property name="color">special://skin/icons/twitch.png</property>
+                            <label>Twitch</label>
+                            <onclick>Skin.ToggleSetting(hidetwitch)</onclick>
+                        </item>	
+                        <item id="10003" description="ted">
+                            <visible>!Skin.HasSetting(hideted)</visible>
+                            <thumb>special://skin/icons/ted.png</thumb>
+							<property name="color">images/White.png</property>
+                            <label>Ted</label>
+                            <onclick>Skin.ToggleSetting(hideted)</onclick>
+                        </item>
+                        <item id="10003" description="ted">
+                            <visible>Skin.HasSetting(hideted)</visible>
+                            <thumb>icons/off.png</thumb>
+							<property name="color">special://skin/icons/ted.png</property>
+                            <label>Ted</label>
+                            <onclick>Skin.ToggleSetting(hideted)</onclick>
+                        </item>							
                         <item id="1006" description="Weather">
                             <visible>!Skin.HasSetting(hidewtr)</visible>
                             <thumb>special://skin/icons/weather.png</thumb>
@@ -325,8 +380,6 @@
                             <label>$LOCALIZE[8]</label>
                             <onclick>Skin.ToggleSetting(hidewtr)</onclick>
                         </item>						
-
-											
                         <item id="1014">
                             <visible>System.GetBool(pvrmanager.enabled) + !Skin.HasSetting(PVRhide)</visible>
                             <thumb>$VAR[LivetvIcon]</thumb>
@@ -347,7 +400,8 @@
                             <label>$VAR[LivetvLabel]</label>
 							<property name="color">icons/green3.png</property>
                             <onclick>ActivateWindow(pvrsettings)</onclick>
-                        </item>						
+                        </item>	
+						
                         <item id="601" description="HomeFav">
                             <visible>!IsEmpty(Skin.String(HomeFav.1.Label))</visible>
                             <label>$INFO[Skin.String(HomeFav.1.Label)]</label>

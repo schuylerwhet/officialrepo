@@ -6,8 +6,6 @@
     </include>
     <include name="ShelfTitle">
         <visible>Container(9000).Row(0)</visible>
-        <animation condition="ControlGroup(700).HasFocus | Control.HasFocus(9009)" effect="zoom" start="100" end="110" time="120" center="325,200" tween="Back" easing="Out">Conditional</animation>
-        <animation condition="!ControlGroup(700).HasFocus + !Control.HasFocus(9009)" effect="zoom" start="110" end="100" time="120" center="325,200">Conditional</animation>
         <left>80</left>
         <top>40</top>
         <height>45</height>
@@ -90,7 +88,7 @@
                     <font>size24</font>
                     <textcolor>White2</textcolor>
                     <autoscroll>false</autoscroll>
-                    <label>[B]$INFO[ListItem.Label][/B]</label>
+                    <label>$INFO[ListItem.Label]</label>
                     <align>center</align>
                 </control>
             </control>
@@ -795,88 +793,6 @@
                 <include>ShelfFade</include>
                 <include>ShelfTitle</include>
                 <label>[B] $LOCALIZE[1036] [/B]</label>
-            </control>
-            <control type="panel" id="319" description="TOP Shortcuts">
-                <visible>IntegerGreaterThan(Window.Property(favourite.count),0) + [Container(9000).HasFocus(352) | Control.HasFocus(319)] + Container(9000).Row(0)</visible>
-                <onup>noop</onup>
-                <ondown>9000</ondown>
-                <onleft>319</onleft>
-                <onright>319</onright>
-                <include>MoviesShortcutsCommons</include>
-                <content>
-                    <item id="0" description="Movies">
-                        <visible>Player.HasVideo + IsEmpty(Player.Art(tvshow.poster))</visible>
-                        <label>$INFO[VideoPlayer.Title]</label>
-                        <thumb>$INFO[VideoPlayer.Cover]</thumb>
-                        <onclick>fullscreen</onclick>
-                    </item>
-                    <item id="0" description="Movies">
-                        <visible>Player.HasVideo + !IsEmpty(Player.Art(tvshow.poster))</visible>
-                        <label>$INFO[VideoPlayer.Title]</label>
-                        <thumb>$INFO[Player.Art(tvshow.poster)]</thumb>
-                        <onclick>fullscreen</onclick>
-                    </item>
-                    <item id="1" description="Favss">
-                        <visible>IntegerGreaterThan(Window.Property(favourite.count),0)</visible>
-                        <label>$INFO[Window.Property(favourite.1.name)]</label>
-                        <thumb>$INFO[Window.Property(favourite.1.thumb)]</thumb>
-                        <onclick>$INFO[Window.Property(favourite.1.path)]</onclick>
-                    </item>
-                    <item id="2" description="Favss">
-                        <visible>IntegerGreaterThan(Window.Property(favourite.count),1)</visible>
-                        <label>$INFO[Window.Property(favourite.2.name)]</label>
-                        <thumb>$INFO[Window.Property(favourite.2.thumb)]</thumb>
-                        <onclick>$INFO[Window.Property(favourite.2.path)]</onclick>
-                    </item>
-                    <item id="3" description="Favss">
-                        <visible>IntegerGreaterThan(Window.Property(favourite.count),2)</visible>
-                        <label>$INFO[Window.Property(favourite.3.name)]</label>
-                        <thumb>$INFO[Window.Property(favourite.3.thumb)]</thumb>
-                        <onclick>$INFO[Window.Property(favourite.3.path)]</onclick>
-                    </item>
-                    <item id="4" description="Favss">
-                        <visible>IntegerGreaterThan(Window.Property(favourite.count),3)</visible>
-                        <label>$INFO[Window.Property(favourite.4.name)]</label>
-                        <thumb>$INFO[Window.Property(favourite.4.thumb)]</thumb>
-                        <onclick>$INFO[Window.Property(favourite.4.path)]</onclick>
-                    </item>
-                    <item id="5" description="Favss">
-                        <visible>IntegerGreaterThan(Window.Property(favourite.count),4)</visible>
-                        <label>$INFO[Window.Property(favourite.5.name)]</label>
-                        <thumb>$INFO[Window.Property(favourite.5.thumb)]</thumb>
-                        <onclick>$INFO[Window.Property(favourite.5.path)]</onclick>
-                    </item>
-                    <item id="6" description="Favss">
-                        <visible>IntegerGreaterThan(Window.Property(favourite.count),5)</visible>
-                        <label>$INFO[Window.Property(favourite.6.name)]</label>
-                        <thumb>$INFO[Window.Property(favourite.6.thumb)]</thumb>
-                        <onclick>$INFO[Window.Property(favourite.6.path)]</onclick>
-                    </item>
-                    <item id="7" description="Favss">
-                        <visible>IntegerGreaterThan(Window.Property(favourite.count),6)</visible>
-                        <label>$INFO[Window.Property(favourite.7.name)]</label>
-                        <thumb>$INFO[Window.Property(favourite.7.thumb)]</thumb>
-                        <onclick>$INFO[Window.Property(favourite.7.path)]</onclick>
-                    </item>
-                    <item id="8" description="Favss">
-                        <visible>IntegerGreaterThan(Window.Property(favourite.count),7)</visible>
-                        <label>$INFO[Window.Property(favourite.8.name)]</label>
-                        <thumb>$INFO[Window.Property(favourite.8.thumb)]</thumb>
-                        <onclick>$INFO[Window.Property(favourite.8.path)]</onclick>
-                    </item>
-                    <item id="9" description="Favss">
-                        <visible>IntegerGreaterThan(Window.Property(favourite.count),8)</visible>
-                        <label>$INFO[Window.Property(favourite.9.name)]</label>
-                        <thumb>$INFO[Window.Property(favourite.9.thumb)]</thumb>
-                        <onclick>$INFO[Window.Property(favourite.9.path)]</onclick>
-                    </item>
-                    <item id="10" description="Favss">
-                        <visible>IntegerGreaterThan(Window.Property(favourite.count),9)</visible>
-                        <label>$INFO[Window.Property(favourite.10.name)]</label>
-                        <thumb>$INFO[Window.Property(favourite.10.thumb)]</thumb>
-                        <onclick>$INFO[Window.Property(favourite.10.path)]</onclick>
-                    </item>
-                </content>
             </control>
         </control>
     </include>
