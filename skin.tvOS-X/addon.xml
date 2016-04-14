@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
-<addon id="skin.tvOS-X" version="107.0.0" name="tvOS-X SchisM Mod" provider-name="iCanuck-SchisM">
+<addon id="skin.tvOS-X" version="108.0.0" name="tvOS-X SchisM Mod" provider-name="iCanuck-SchisM">
   <requires>
     <import addon="xbmc.gui" version="5.10.0"/>
     <import addon="script.favourites" version="3.2.5"/>

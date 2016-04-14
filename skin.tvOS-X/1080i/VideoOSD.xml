@@ -113,7 +113,7 @@
 					<height>34</height>
 					<font>Light27</font>
 					<textcolor>fff3f3f3</textcolor>
-					<label>$VAR[PlayerTime]</label>
+					<label>$INFO[Player.Time]</label>
 				</control>
 				<!--  Divider -->
 				<control type="label">
@@ -130,7 +130,7 @@
 					<height>34</height>
 					<font>Light27</font>
 					<textcolor>ff696969</textcolor>
-					<label>$VAR[PlayerDuration]</label>
+					<label>$INFO[Player.Duration]</label>
 				</control>
 				<!--  HD label -->
 				<control type="label">
@@ -175,7 +175,7 @@
 					<textcolor>ffebebeb</textcolor>
 					<label>VideoPlayer.VideoResolution</label>
 				</control> -->
-				<control type="label">
+<!-- 				<control type="label">
 					<left>55</left>
 					<top>0</top>
 					<width>auto</width>
@@ -183,7 +183,7 @@
 					<font>Reg27</font>
 					<textcolor>ffebebeb</textcolor>
 					<label>$INFO[VideoPlayer.VideoCodec] - Ch:$INFO[VideoPlayer.AudioChannels,, ] - $INFO[VideoPlayer.AudioCodec]$VAR[VideoPlayer.VideoCodec, ] - $INFO[VideoPlayer.VideoAspect]</label>
-				</control>
+				</control> -->
 		
 			</control>
 			<control id="300" type="grouplist">
