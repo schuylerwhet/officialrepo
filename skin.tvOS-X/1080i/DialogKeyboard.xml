@@ -10,6 +10,7 @@
         <effect type="fade" start="100" end="0" time="300" />
     </animation>
     <controls>
+
         <control type="group">
             <top>450</top>
             <visible>!Window.IsVisible(numericinput)</visible>
@@ -46,6 +47,7 @@
                 <texturenofocus>-</texturenofocus>
                 <align>center</align>
             </control>
+
             <control type="group">
                 <left>140</left>
                 <top>280</top>
@@ -364,6 +366,7 @@
                         <include>Keyboardbuttons</include>
                         <label>20177</label>
                         <onup>302</onup>
+						<ondown>9091</ondown>
                     </control>
                     <control type="button" id="307">
                         <description>IP ADDRESS button</description>
@@ -372,7 +375,7 @@
                         <label>1006</label>
                         <textoffsetx>0</textoffsetx>
                         <onup>160</onup>
-                        <ondown></ondown>
+                        <ondown>9091</ondown>
                         <focusedcolor>black</focusedcolor>
                     </control>
                     <control type="button" id="32">
@@ -385,7 +388,7 @@
                         <onleft>307</onleft>
                         <onright>305</onright>
                         <onup>163</onup>
-                        <ondown></ondown>
+                        <ondown>9091</ondown>
                     </control>
                      <control type="button" id="8">
                         <description>SPACE button</description>
@@ -397,7 +400,7 @@
                         <onleft>307</onleft>
                         <onright>305</onright>
                         <onup>163</onup>
-                        <ondown></ondown>
+                        <ondown>9091</ondown>
                     </control>
                     <control type="button" id="305">
                         <description>PREVIOUS button</description>
@@ -408,7 +411,7 @@
                         <onleft>32</onleft>
                         <onright>306</onright>
                         <onup>164</onup>
-                        <ondown></ondown>
+                        <ondown>9091</ondown>
                     </control>
                     <control type="button" id="306">
                         <description>NEXT button</description>
@@ -419,11 +422,61 @@
                         <onleft>305</onleft>
                         <onright>307</onright>
                         <onup>166</onup>
-                        <ondown></ondown>
+                        <ondown>9091</ondown>
                     </control>
 
                 </control>
             </control>
         </control>
-    </controls>
+    
+		<control type="list" id="9091">
+					
+					<left>100</left>
+					<top>1000</top>
+					<width>1750</width>
+					<height>750</height>
+					
+					<content limit="10">plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).Index(1)]</content>
+					<onup>300</onup>
+					<ondown>9091</ondown>
+					<onleft>9091</onleft>
+					<onright>9091</onright>
+					<onback>300</onback>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="quadratic" easing="out">200</scrolltime>
+					<itemlayout height="48" width="250">
+					<control type="button">
+						<width>230</width>
+						<height>48</height>
+					</control>
+						<control type="label">
+							<width>200</width>
+							<left>15</left>
+                        	<width>225</width>
+							<height>48</height>
+							<font>size27</font>
+							
+							<label>$INFO[ListItem.Label]</label>
+						</control>					
+					</itemlayout>
+					<focusedlayout height="48" width="250">
+					<control type="button">
+						<width>230</width>
+						<height>48</height>
+					</control>
+						<control type="label">
+							<width>200</width>
+							<left>15</left>
+                        	<width>225</width>
+							<height>48</height>
+							<font>size27</font>
+							
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+
+					</focusedlayout>
+				</control>
+
+	
+	</controls>
 </window>

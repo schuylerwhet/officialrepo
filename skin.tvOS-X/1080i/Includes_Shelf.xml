@@ -6,14 +6,15 @@
     </include>
     <include name="ShelfTitle">
         <visible>Container(9000).Row(0)</visible>
-        <left>80</left>
+        <left>100</left>
         <top>40</top>
         <height>45</height>
         <width>750</width>
         <align>left</align>
         <aligny>center</aligny>
         <font>size30</font>
-        <textcolor>shelftitle</textcolor>
+        <textcolor>dimgray</textcolor>
+		<focuscolor>black</focuscolor>
         <!--shadowcolor>-</shadowcolor-->
     </include>
     <include name="MoviesShortcutsCommons">
@@ -57,7 +58,17 @@
                     <height>580</height>
                     <texture>shadow.png</texture>
                 </control>
+					<control type="image" description="color base">
+						<animation effect="zoom" start="100" end="8500" time="50" center="auto" tween="Back" easing="Out" delay="15000">Focus</animation>
+                        <top>100</top>
+						<centerleft>180</centerleft>
+                        <width>50</width>
+                        <height>50</height>
+                        <texture>icons/iconbase.png</texture>
+                    </control>
                 <control type="image">
+					<animation effect="zoom" start="100" end="102" time="4000" center="auto" tween="Back" easing="Out" delay="15000">Focus</animation>
+					
                     <visible>IsEmpty(ListItem.Art(tvshow.poster))</visible>
                     <left>100</left>
                     <top>16</top>
@@ -67,6 +78,8 @@
                     <aspectratio>scale</aspectratio>
                 </control>
                 <control type="image">
+					<animation effect="zoom" start="100" end="102" time="4000" center="auto" tween="Back" easing="Out" delay="15000">Focus</animation>
+
                     <visible>!IsEmpty(ListItem.Art(tvshow.poster))</visible>
                     <left>100</left>
                     <top>16</top>

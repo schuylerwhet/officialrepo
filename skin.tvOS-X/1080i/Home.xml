@@ -79,8 +79,8 @@
             <itemlayout height="290" width="360">
                 <control type="image" description="shade_base">
                     <centerleft>180</centerleft>
-                    <width>360</width>
-                    <height>250</height>
+                    <width>345</width>
+                    <height>235</height>
                     <texture>icons/iconbase.png</texture>
                 </control>
                 <control type="image" description="color base">
@@ -114,31 +114,29 @@
                     <texture>$INFO[ListItem.Property(weatherthumb)]</texture>
                     <aspectratio>keep</aspectratio>
                 </control>				
-                <control type="label" description="label">
-					<visible>!Player.HasVideo</visible>
-                    <!--animation effect="fade" start="0" end="100" time="150" delay="50">Focus</animation-->
-                    <animation effect="fade" start="100" end="0" time="100">unFocus</animation>					
-                    <centerleft>180</centerleft>
-                    <top>234</top>
-                    <width>350</width>
-                    <height>24</height>
-                    <font>size27</font>
-                    <align>center</align>
-					<scroll>false</scroll>
-                    <textcolor>textcolor3</textcolor>
-                    <label>$INFO[ListItem.label]</label>
-                </control>				
+				
             </itemlayout>
             <focusedlayout height="290" width="360">
-                <control type="group">												
-                    <!--animation effect="zoom" start="100" end="130" time="120" center="auto" tween="Back" easing="Out">Focus</animation>
-                    <animation effect="zoom" start="130" end="100" time="120" center="auto">unFocus</animation-->															
-					<include condition="!Skin.HasSetting(ATV3select)">ATV4select</include>										
+                <control type="group">		
+
+                    <animation effect="zoom" start="100" end="120" time="120" center="auto" tween="Back" easing="Out">Focus</animation>
+                    <animation effect="zoom" start="120" end="100" time="120" center="auto">unFocus</animation>															
+					<include condition="!Skin.HasSetting(ATV3select)">ATV4select</include>
+					<control type="image" description="color base">
+						<animation effect="zoom" start="100" end="8500" time="50" center="auto" tween="Back" easing="Out" delay="15000">Focus</animation>
+                        <top>125</top>
+						<centerleft>180</centerleft>
+                        <width>50</width>
+                        <height>50</height>
+                        <texture>shadow.png</texture>
+                    </control>
+									
                     <control type="image" description="shade_base">
+						<animation effect="zoom" start="100" end="115" time="4000" center="auto" tween="Back" easing="Out" delay="15000">Focus</animation>
                         <centerleft>180</centerleft>
                         <width>360</width>
                         <height>250</height>
-                        <texture>icons/iconbase.png</texture>
+                        <texture>shadow.png</texture>
                     </control>
                     <control type="image" description="color base">
                         <centerleft>180</centerleft>
@@ -148,6 +146,8 @@
                         <texture diffuse="icons/diffusehomeicon.png">$INFO[ListItem.Property(color)]</texture>
                     </control>
                     <control type="image" description="THMBSICONS">
+						<animation effect="zoom" start="100" end="115" time="4000" center="auto" tween="Back" easing="Out" delay="15000">Focus</animation>					
+
                         <visible>!IsEmpty(Listitem.thumb)</visible>
                         <centerleft>180</centerleft>
                         <top>27</top>
@@ -180,12 +180,13 @@
                     <top>234</top>
                     <width>368</width>
                     <height>24</height>
-                    <font>size27</font>
+                    <font>size22</font>
                     <align>center</align>
 					<scroll>true</scroll>
-                    <textcolor>textcolor4</textcolor>
+                    <textcolor>whitesmoke</textcolor>
                     <label>[B]$INFO[ListItem.label][/B]</label>
                 </control>
+				
             </focusedlayout>
             <content>
 <!--                 <item id="355">
@@ -735,9 +736,9 @@
 					<font>size24</font>
 					<align>center</align>
 					<label>Search</label>
-					<textcolor>grey</textcolor>
+					<textcolor>dimgray</textcolor>
 					
-					<focusedcolor>5dffffff</focusedcolor>
+					<focusedcolor>whitesmoke</focusedcolor>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<onclick>RunAddon(plugin.program.super.favourites)</onclick>
@@ -756,9 +757,9 @@
 					<font>size24</font>
 					<align>center</align>
 					<label>Apps</label>
-					<textcolor>grey</textcolor>
+					<textcolor>dimgray</textcolor>
 					
-					<focusedcolor>5dffffff</focusedcolor>
+					<focusedcolor>whitesmoke</focusedcolor>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<onclick>RunAddon(plugin.program.addoninstaller)</onclick>
@@ -776,9 +777,9 @@
 					<font>size24</font>
 					<align>center</align>
 					<label>Settings</label>
-					<textcolor>grey</textcolor>
+					<textcolor>dimgray</textcolor>
 					
-					<focusedcolor>5dffffff</focusedcolor>
+					<focusedcolor>whitesmoke</focusedcolor>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<onclick>ActivateWindow(Settings)</onclick>
@@ -795,7 +796,7 @@
 					<height>45</height>
 					<font>size24</font>
 					<align>center</align>
-					
+					<textcolor>dimgray</textcolor>
 					
 					<label>$INFO[System.Date] • $INFO[System.Time]</label>
 				</control>									
