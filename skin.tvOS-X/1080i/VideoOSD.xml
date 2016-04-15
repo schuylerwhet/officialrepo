@@ -100,41 +100,9 @@
 				<overlaytexture>-</overlaytexture>
 			</control>
 			<control type="grouplist">
-				<left>92</left>
-				<bottom>38</bottom>
-				<width>800</width>
-				<height>40</height>
-				<itemgap>4</itemgap>
-				<orientation>horizontal</orientation>
-				<usecontrolcoords>true</usecontrolcoords>
-				<!--  Current position -->
-				<control type="label">
-					<width>auto</width>
-					<height>34</height>
-					<font>Light27</font>
-					<textcolor>fff3f3f3</textcolor>
-					<label>$INFO[Player.Time]</label>
-				</control>
-				<!--  Divider -->
-				<control type="label">
-					<width>auto</width>
-					<height>34</height>
-					<font>Light27</font>
-					<textcolor>ff696969</textcolor>
-					<label>/</label>
-					<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
-				</control>
-				<!--  Total length -->
-				<control type="label">
-					<width>auto</width>
-					<height>34</height>
-					<font>Light27</font>
-					<textcolor>ff696969</textcolor>
-					<label>$INFO[Player.Duration]</label>
-				</control>
 				<!--  HD label -->
 				<control type="label">
-					<left>24</left>
+					<left>5</left>
 					<top>-2</top>
 					<width>auto</width>
 					<height>34</height>
@@ -145,7 +113,7 @@
 				</control>
 				<!--  HD label -->
 				<control type="label">
-					<left>24</left>
+					<left>5</left>
 					<top>-2</top>
 					<width>auto</width>
 					<height>34</height>
@@ -156,7 +124,7 @@
 				</control>
 				<!--  SD label -->
 				<control type="label">
-					<left>24</left>
+					<left>5</left>
 					<top>-2</top>
 					<width>auto</width>
 					<height>34</height>
@@ -165,6 +133,43 @@
 					<label>[B]SD[/B]</label>
 					<visible>!IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
 				</control>
+				<left>92</left>
+				<bottom>38</bottom>
+				<width>800</width>
+				<height>40</height>
+				<itemgap>4</itemgap>
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<!--  Current position -->
+				<control type="label">
+					<left>25</left>
+					<width>auto</width>
+					<height>34</height>
+					<font>Light27</font>
+					<textcolor>fff3f3f3</textcolor>
+					<label>$INFO[Player.Time]</label>
+				</control>
+				<!--  Divider -->
+				<control type="label">
+					
+					<width>auto</width>
+					<height>34</height>
+					<font>Light27</font>
+					<textcolor>ff696969</textcolor>
+					<label>/</label>
+					<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
+				</control>
+				<!--  Total length -->
+
+				<control type="label">
+					
+					<width>auto</width>
+					<height>34</height>
+					<font>Light27</font>
+					<textcolor>ff696969</textcolor>
+					<label>$INFO[Player.Duration]</label>
+				</control>
+
 				<!--  Resolution label -->
 <!-- 				<control id="99" type="label">
 					<left>24</left>

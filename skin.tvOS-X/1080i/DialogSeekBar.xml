@@ -92,8 +92,42 @@
 					<itemgap>4</itemgap>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
+				<!--  HD label -->
+				<control type="label">
+					<left>5</left>
+					<top>-2</top>
+					<width>auto</width>
+					<height>34</height>
+					<font>Bold28</font>
+					<textcolor>ffebebeb</textcolor>
+					<label>[COLOR orange][B]HD[/B][/COLOR]</label>
+					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719) + !IntegerGreaterThan(VideoPlayer.VideoResolution,721)</visible>
+				</control>
+				<!--  HD label -->
+				<control type="label">
+					<left>5</left>
+					<top>-2</top>
+					<width>auto</width>
+					<height>34</height>
+					<font>Bold28</font>
+					<textcolor>ffebebeb</textcolor>
+					<label>[COLOR orange][B]1080P[/B][/COLOR]</label>
+					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,720)</visible>
+				</control>
+				<!--  SD label -->
+				<control type="label">
+					<left>5</left>
+					<top>-2</top>
+					<width>auto</width>
+					<height>34</height>
+					<font>Bold28</font>
+					<textcolor>ffebebeb</textcolor>
+					<label>[B]SD[/B]</label>
+					<visible>!IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
+				</control>
 					<!--  Current position -->
 					<control type="label">
+						<left>25</left>
 						<width>auto</width>
 						<height>34</height>
 						<font>Light27</font>
@@ -117,39 +151,7 @@
 						<textcolor>ff696969</textcolor>
 						<label>$INFO[Player.Duration]</label>
 					</control>
-				<!--  HD label -->
-				<control type="label">
-					<left>24</left>
-					<top>-2</top>
-					<width>auto</width>
-					<height>34</height>
-					<font>Bold28</font>
-					<textcolor>ffebebeb</textcolor>
-					<label>[COLOR orange][B]HD[/B][/COLOR]</label>
-					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719) + !IntegerGreaterThan(VideoPlayer.VideoResolution,721)</visible>
-				</control>
-				<!--  HD label -->
-				<control type="label">
-					<left>24</left>
-					<top>-2</top>
-					<width>auto</width>
-					<height>34</height>
-					<font>Bold28</font>
-					<textcolor>ffebebeb</textcolor>
-					<label>[COLOR orange][B]1080P[/B][/COLOR]</label>
-					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,720)</visible>
-				</control>
-				<!--  SD label -->
-				<control type="label">
-					<left>24</left>
-					<top>-2</top>
-					<width>auto</width>
-					<height>34</height>
-					<font>Bold28</font>
-					<textcolor>ffebebeb</textcolor>
-					<label>[B]SD[/B]</label>
-					<visible>!IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
-				</control>
+
 
 
 				</control>
@@ -217,8 +219,43 @@
 					<itemgap>4</itemgap>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
+				<!--  HD label -->
+				<control type="label">
+					<left>5</left>
+					<top>-2</top>
+					<width>auto</width>
+					<height>34</height>
+					<font>Bold28</font>
+					<textcolor>ffebebeb</textcolor>
+					<label>[COLOR orange][B]HD[/B][/COLOR]</label>
+					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719) + !IntegerGreaterThan(VideoPlayer.VideoResolution,721)</visible>
+				</control>
+				<!--  HD label -->
+				<control type="label">
+					<left>5</left>
+					<top>-2</top>
+					<width>auto</width>
+					<height>34</height>
+					<font>Bold28</font>
+					<textcolor>ffebebeb</textcolor>
+					<label>[COLOR orange][B]1080P[/B][/COLOR]</label>
+					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,720)</visible>
+				</control>
+				<!--  SD label -->
+				<control type="label">
+					<left>5</left>
+					<top>-2</top>
+					<width>auto</width>
+					<height>34</height>
+					<font>Bold28</font>
+					<textcolor>ffebebeb</textcolor>
+					<label>[B]SD[/B]</label>
+					<visible>!IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
+				</control>
+
 					<!--  Current position -->
 					<control type="label">
+						<left>25</left>
 						<width>auto</width>
 						<height>34</height>
 						<font>Light27</font>
@@ -242,39 +279,6 @@
 						<textcolor>ff696969</textcolor>
 						<label>$INFO[Player.Duration]</label>
 					</control>
-				<!--  HD label -->
-				<control type="label">
-					<left>24</left>
-					<top>-2</top>
-					<width>auto</width>
-					<height>34</height>
-					<font>Bold28</font>
-					<textcolor>ffebebeb</textcolor>
-					<label>[COLOR orange][B]HD[/B][/COLOR]</label>
-					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719) + !IntegerGreaterThan(VideoPlayer.VideoResolution,721)</visible>
-				</control>
-				<!--  HD label -->
-				<control type="label">
-					<left>24</left>
-					<top>-2</top>
-					<width>auto</width>
-					<height>34</height>
-					<font>Bold28</font>
-					<textcolor>ffebebeb</textcolor>
-					<label>[COLOR orange][B]1080P[/B][/COLOR]</label>
-					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,720)</visible>
-				</control>
-				<!--  SD label -->
-				<control type="label">
-					<left>24</left>
-					<top>-2</top>
-					<width>auto</width>
-					<height>34</height>
-					<font>Bold28</font>
-					<textcolor>ffebebeb</textcolor>
-					<label>[B]SD[/B]</label>
-					<visible>!IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
-				</control>
 				</control>
 				<!--  Current time -->
 				<control id="99" type="label">
