@@ -52,8 +52,6 @@
     <aspectratio>stretch</aspectratio>
   </default>
   <default type="button">
-    <animation effect="zoom" start="100" end="105" time="120" center="auto" tween="Back" easing="Out">Focus</animation>
-    <animation effect="zoom" start="105" end="100" time="120" center="auto">unFocus</animation>
     <width>390</width>
     <height>70</height>
     <align>center</align>
@@ -71,8 +69,6 @@
     <pulseonselect>false</pulseonselect>
   </default>
   <default type="edit">
-    <animation effect="zoom" start="100" end="105" time="120" center="auto" tween="Back" easing="Out">Focus</animation>
-    <animation effect="zoom" start="105" end="100" time="120" center="auto">unFocus</animation>  
     <width>390</width>
     <height>75</height>
     <align>center</align>
@@ -92,8 +88,6 @@
     <pulseonselect>false</pulseonselect>
   </default>
   <default type="togglebutton">
-    <animation effect="zoom" start="100" end="105" time="120" center="auto" tween="Back" easing="Out">Focus</animation>
-    <animation effect="zoom" start="105" end="100" time="120" center="auto">unFocus</animation>
     <width>450</width>
     <height>70</height>
     <align>center</align>
@@ -114,8 +108,6 @@
     <pulseonselect>false</pulseonselect>
   </default>
   <default type="radiobutton">
-    <animation effect="zoom" start="100" end="105" time="120" center="auto" tween="Back" easing="Out">Focus</animation>
-    <animation effect="zoom" start="105" end="100" time="120" center="auto">unFocus</animation>
     <top>6</top>
     <height>70</height>
     <align>left</align>
@@ -139,31 +131,30 @@
     <pulseonselect>false</pulseonselect>
   </default>
   <default type="spincontrol">
-    <animation effect="zoom" start="100" end="105" time="120" center="auto" tween="Back" easing="Out">Focus</animation>
-    <animation effect="zoom" start="105" end="100" time="120" center="auto">unFocus</animation>
-    <textureup>images/ArrowUpNF.png</textureup>
-    <textureupfocus>images/ArrowUpFO.png</textureupfocus>
-    <texturedown>images/ArrowDownNF.png</texturedown>
-    <texturedownfocus>images/ArrowDownFO.png</texturedownfocus>
-    <!--texturefocus border="8">images/Buttonselect.png</texturefocus-->
-	<include>right_listpanel_texfocus</include>
-    <spinwidth>18</spinwidth>
-    <spinheight>18</spinheight>
+    <height>70</height>
     <font>size33</font>
-    <textcolor>textcolor</textcolor>
-    <shadowcolor>-</shadowcolor>
-    <focusedcolor>black</focusedcolor>
-    <selectedcolor>orange</selectedcolor>
-    <disabledcolor>Disabled</disabledcolor>
-    <textoffsetx>20</textoffsetx>
-    <align>left</align>
-    <aligny>center</aligny>
-    <reverse>yes</reverse>
-    <pulseonselect>false</pulseonselect>
+     <spinwidth>32</spinwidth>
+    <spinheight>32</spinheight>
+    <textcolor>white</textcolor>
+     <focusedcolor>grey</focusedcolor>
+    <selectedcolor>white</selectedcolor>
+    <disabledcolor>black</disabledcolor>
+        <texturefocus>images/White.png</texturefocus>
+        <texturenofocus>noop</texturenofocus>
+        <textureup>images/ArrowUpNF.png</textureup>
+        <texturedown>images/ArrowDownNF.png</texturedown>
+        <textureupfocus>images/ArrowUpFO.png</textureupfocus>
+        <texturedownfocus>images/ArrowDownFO.png</texturedownfocus>
+        <textureupdisabled>images/ArrowUpFO.png</textureupdisabled>
+        <texturedowndisabled>images/ArrowDownNF.png</texturedowndisabled>
+        <textoffsetx>30</textoffsetx>
+        <align>left</align>
+        <aligny>center</aligny>
+        <reverse>yes</reverse>
+        <pulseonselect>false</pulseonselect>
+
   </default>
   <default type="spincontrolex">
-    <animation effect="zoom" start="100" end="105" time="120" center="auto" tween="Back" easing="Out">Focus</animation>
-    <animation effect="zoom" start="105" end="100" time="120" center="auto">unFocus</animation>
     <width>450</width>
     <height>70</height>
     <label>-</label>
