@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.schismwizard" name="[COLOR orange]SchisM TV[/COLOR] [COLOR wizard] Wizard[/COLOR]" version="1.1.0" provider-name="SchisM">
+<addon id="plugin.video.schismwizard" name="[COLOR orange]SchisM TV[/COLOR] [COLOR wizard] Wizard[/COLOR] Elite" version="3.3.0" provider-name="SchisM">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.addon.common" />
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
   </extension>
-  <extension point="xbmc.service" library="service.py" start="startup">
-  </extension> 
+
   <extension point="xbmc.addon.metadata">
     <summary lang="en">[COLOR lime]SchisM TV[/COLOR] Wizard</summary>
     <description lang="en">Install SchisM Official Builds</description>
