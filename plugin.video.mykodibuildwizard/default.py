@@ -143,15 +143,15 @@ def BackupWiz():
 
 def RestoreWiz():
 	
-	backupdir=unicode(selfAddon.getSetting('remote_restore_path'))
-	import time
-	dp = xbmcgui.DialogProgress()
-	lib=xbmc.translatePath(os.path.join(backupdir,'addon_data.zip'))
-	dp.create("Restoring File","In Progress...",'', 'Please Wait')
-	dp.update(0,"", "Extracting Zip Please Wait")
-	extract.all(backupdir,ADDON_DATA,dp)
-	time.sleep(1)
-
+    backupdir=unicode(selfAddon.getSetting('remote_restore_path'))
+    import time
+    dp = xbmcgui.DialogProgress()
+    lib=xbmc.translatePath(os.path.join(backupdir,'addon_data.zip'))
+    dp.create("Restoring File","In Progress...",'', 'Please Wait')
+    dp.update(0,"", "Extracting Zip Please Wait")
+    extract.all(backupdir,ADDON_DATA,dp)
+    dialog.ok("DOWNLOAD COMPLETE", 'Unfortunately the only way to get the new changes to stick is', 'to force close kodi. Click ok to force Kodi to close,', 'DO NOT use the quit/exit options in Kodi., If the Force close does not close for some reason please Restart Device or kill task manaully')
+    killxbmc()
 	 
 	 
 def OPEN_URL(url):
