@@ -16,11 +16,5 @@
     <setting id="listplay" type="bool" label="Disable Autoplay" default="false"/>
     <setting id="autoplay" type="bool" label="Autoplay random sources" default="true" visible="eq(-1,false)"/>
 	</category>
-	<category label="Sort Autoplay Sources">
-    <setting id="enable_sorting" type="bool" label="Enable source sorting" default="true"/>
-    <setting label="Source order (comma separated e.g.: vidzi.tv,vodlocker.com)" type="lsep"/>
-    <setting id="sort" type="text" label="" default="vidzi,vidlocker,streamin.to,thevideo,vidto,vid.ag,vidspot,bestream,vidbull" enable="!eq(-2,false)"/>
-    <setting label="Source blacklist (comma separated e.g.: vidzi.tv,vodlocker.com)" type="lsep"/>
-    <setting label="" type="text" id="source_blacklist" default=""/>
-    </category>
+
 </settings>

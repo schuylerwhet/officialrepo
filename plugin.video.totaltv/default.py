@@ -49,11 +49,7 @@ def setView(content, viewType):
 def get_links(url):
     domain='http://www.watchfree.to'
     my_addon = xbmcaddon.Addon()
-    black = unicode(my_addon.getSetting('source_blacklist'))
-    if black!='':
-        blacklist=black.split(',')
-    else:
-        blacklist=[] 
+
     html=read_url(url)
     soup=bs(html)
     links=re.compile('<a href="(.+?)" rel="nofollow" title=".+?" target="_blank">').findall(html)
@@ -80,26 +76,6 @@ def get_month():
         mnth=date.strftime("%B")
         out+=[[name,day,month,year,mnth]]
     return out
-
-def sort_links(links):
-    my_addon = xbmcaddon.Addon()
-    sort=my_addon.getSetting('enable_sorting')
-    black = unicode(my_addon.getSetting('source_blacklist'))
-    blacklist=black.split(',')
-    listout=[]
-    if sort!='false':
-        sorting=unicode(my_addon.getSetting('sort'))
-        sort_list=sorting.split(',')
-        for i in range(len(sort_list)):
-            for j in range(len(links)):
-                if sort_list[i] in links[j] and links[j] not in blacklist:
-                    listout.append(links[j])
-        for k in range(len(links)):
-            if links[k] not in listout and links[k] not in blacklist:
-                listout.append(links[k])
-        return listout
-    else:
-        return links
 
 #borrowed from 1Channel by tknorris and modified
 def get_dbid(title, season='', episode='', year=''):
@@ -142,36 +118,7 @@ def get_dbid(title, season='', episode='', year=''):
         utils.log('Failed to recover dbid, type: %s, title: %s, season: %s, episode: %s' % (video_type, title, season, episode), xbmc.LOGDEBUG)
         return None
 
-def sort_iw(links,sources):
-    my_addon = xbmcaddon.Addon()
-    sort=my_addon.getSetting('enable_sorting')
-    black = unicode(my_addon.getSetting('source_blacklist'))
-    blacklist=black.split(',')
-    listout=[]
-    hostout=[]
-    listout2=[]
-    hostout2=[]
-    if sort!='false':
-        sorting=unicode(my_addon.getSetting('sort'))
-        sort_list=sorting.split(',')
-        br=1
-        b2=0
-        for i in range(len(sort_list)):
-            for j in range(len(links)):
-                if sort_list[i] in sources[j] and links[j] not in blacklist:
-                    listout.append(links[j])
-                    hostout.append('%s. '%(br)+sources[j])
-                    br+=1
-        for k in range(len(links)):
-            
-            if links[k] not in listout and links[k] not in blacklist:
-                listout.append(links[k])
-                hostout.append('%s. '%(b2+br)+sources[k])
-                b2+=1
-        return listout,hostout
-    else:
-        return links,sources
-
+7
 #Notify function from Eldorado's PFTV
 def Notify(typeq, box_title, message, times='', line2='', line3=''):
      if box_title == '':
@@ -312,7 +259,7 @@ if play:
     # season=dicti['season'][0]
     # episode=dicti['episode'][0]
     links=get_links(link)
-    sorted_links = sort_links(links)
+ 
     randomitem = []
     sources = []
     autoplay = my_addon.getSetting('autoplay')
@@ -358,9 +305,9 @@ if play:
                 Notify('small', 'Link down: ', playrandom,'')
          except: pass  	
     elif autoplay=='false':
-		    for url in sorted_links:
+		    for url in links:
 				count+=1
-				progress = float(count) / float(len(sorted_links)) * 100  
+				progress = float(count) / float(len(links)) * 100  
 				
 				try:
 					dp.update(int(progress), 'TRYING (random off): ', url)
