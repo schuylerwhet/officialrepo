@@ -112,7 +112,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.schismwizardfree" name="[COLOR orange]SchisM TV[/COLOR] [COLOR wizard] Wizard[/COLOR] All in One" version="5.0.0" provider-name="SchisM">
+<addon id="plugin.video.schismwizardfree" name="[COLOR orange]SchisM TV[/COLOR] [COLOR wizard] Wizard[/COLOR] All in One" version="5.1.0" provider-name="SchisM">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
